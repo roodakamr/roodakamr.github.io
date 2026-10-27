@@ -1872,16 +1872,6 @@ body.lang-en .scroll-top { left: auto; right: 24px; }
 }
 
 /* ===== IMAGE MOTION ===== */
-@keyframes kenBurns {
-  0%   { transform: scale(1.02) translate(0, 0); }
-  100% { transform: scale(1.16) translate(-2.5%, -2.5%); }
-}
-
-@keyframes kenBurnsAlt {
-  0%   { transform: scale(1.16) translate(-2.5%, 1.5%); }
-  100% { transform: scale(1.02) translate(1.5%, -1%); }
-}
-
 @keyframes shineSweep {
   0%, 55% { transform: translateX(-130%); }
   100%    { transform: translateX(130%); }
@@ -1890,25 +1880,6 @@ body.lang-en .scroll-top { left: auto; right: 24px; }
 @keyframes modalImgIn {
   0%   { opacity: 0; transform: scale(1.3); filter: blur(10px); }
   100% { opacity: 1; transform: scale(1); filter: blur(0); }
-}
-
-.script-card-media img {
-  transition: scale 0.5s ease;
-  animation: kenBurns 9s ease-in-out infinite alternate;
-  will-change: transform;
-}
-
-.script-card:nth-child(even) .script-card-media img {
-  animation-name: kenBurnsAlt;
-  animation-duration: 11s;
-}
-
-.script-card:nth-child(3n) .script-card-media img { animation-delay: -3s; }
-.script-card:nth-child(3n+1) .script-card-media img { animation-delay: -6s; }
-
-.script-card:hover .script-card-media img {
-  transform: none;
-  scale: 1.1;
 }
 
 .script-card-media::after {
@@ -1924,13 +1895,10 @@ body.lang-en .scroll-top { left: auto; right: 24px; }
 .script-card:nth-child(even) .script-card-media::after { animation-delay: -3s; }
 
 .modal-slider img.active {
-  animation:
-    modalImgIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both,
-    kenBurns 12s ease-in-out 0.9s infinite alternate;
+  animation: modalImgIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .script-card-media img,
   .script-card-media::after,
   .modal-slider img.active {
     animation: none !important;
