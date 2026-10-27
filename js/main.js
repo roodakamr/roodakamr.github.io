@@ -389,12 +389,13 @@ async function doCustomOrder(e) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
-    if (!res.ok) throw new Error('send failed');
+    if (!res.ok) throw new Error(String(res.status));
     showToast(t('toast_order_sent'), 'success', 5000);
     form.reset();
     populateScriptSelect();
   } catch (err) {
-    showToast(lang === 'ar' ? 'تعذر إرسال الطلب، حاول مرة أخرى أو تواصل معنا على الديسكورد' : 'Could not send the request. Please try again or contact us on Discord', 'error', 6000);
+    const code = /^\d+$/.test(err.message) ? err.message : 'network';
+    showToast((lang === 'ar' ? 'تعذر إرسال الطلب، حاول مرة أخرى أو تواصل معنا على الديسكورد' : 'Could not send the request. Please try again or contact us on Discord') + ` (${code})`, 'error', 6000);
   } finally {
     btn.disabled = false;
     btn.textContent = label;
