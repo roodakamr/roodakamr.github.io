@@ -9,8 +9,6 @@ const scripts = [
     title_en: 'Police System',
     desc_ar: 'نظام متكامل لإدارة الشرطة وقوانين المدينة: قائمة شرطة، إدارة الأفراد، البلاغات، السجن، المخالفات والمركبات.',
     desc_en: 'Complete police management system: police menu, personnel, dispatch reports, jailing, fines and vehicles.',
-    price_sar: 320,
-    price_usd: 85,
     badge: 'hot',
     badge_label_ar: 'الأكثر طلباً',
     badge_label_en: 'Most Wanted',
@@ -29,8 +27,6 @@ const scripts = [
     title_en: 'EMS System',
     desc_ar: 'نظام إسعاف واقعي ومتطور: إنعاش، علاج الإصابات، حالة المريض والبلاغات الطبية.',
     desc_en: 'Realistic EMS system: revive, injury treatment, patient status and medical dispatch.',
-    price_sar: 280,
-    price_usd: 75,
     badge: 'new',
     badge_label_ar: 'جديد',
     badge_label_en: 'New',
@@ -49,8 +45,6 @@ const scripts = [
     title_en: 'Civilian Jobs System',
     desc_ar: 'وظائف متنوعة وممتعة ومربحة: توصيل، سائق شاحنة، تاكسي، نظافة وميكانيكي.',
     desc_en: 'Diverse and profitable jobs: delivery, trucker, taxi, garbage and mechanic.',
-    price_sar: 250,
-    price_usd: 65,
     badge: 'hot',
     badge_label_ar: 'الأكثر طلباً',
     badge_label_en: 'Most Wanted',
@@ -69,8 +63,6 @@ const scripts = [
     title_en: 'Gangs System',
     desc_ar: 'نظام عصابات متكامل مع مناطق وفعاليات: إدارة الأعضاء، المناطق، البيك والحروب.',
     desc_en: 'Full gang system with territories and events: members, zones, stash and wars.',
-    price_sar: 290,
-    price_usd: 78,
     badge: 'featured',
     badge_label_ar: 'مميز',
     badge_label_en: 'Featured',
@@ -89,8 +81,6 @@ const scripts = [
     title_en: 'Inventory System',
     desc_ar: 'حقيبة واقعية بتصميم احترافي: أوزان، عناصر، أسلحة وإسعافات.',
     desc_en: 'Realistic inventory with a professional design: weights, items, weapons and medkits.',
-    price_sar: 220,
-    price_usd: 58,
     badge: 'new',
     badge_label_ar: 'جديد',
     badge_label_en: 'New',
@@ -109,8 +99,6 @@ const scripts = [
     title_en: 'Real Estate System',
     desc_ar: 'نظام شراء وبيع وإدارة العقارات: فلل، شقق، مرائب ومسبح.',
     desc_en: 'Property buy/sell and management: villas, apartments, garages and pools.',
-    price_sar: 290,
-    price_usd: 78,
     badge: 'hot',
     badge_label_ar: 'الأكثر طلباً',
     badge_label_en: 'Most Wanted',
@@ -129,8 +117,6 @@ const scripts = [
     title_en: 'Vehicle Shop System',
     desc_ar: 'نظام محلات متكامل وقابل للتخصيص: سيارات رياضية، SUV، دفع رباعي ودراجات.',
     desc_en: 'Complete customizable shop system: sports, SUVs, sedans, trucks and motorcycles.',
-    price_sar: 240,
-    price_usd: 64,
     badge: 'featured',
     badge_label_ar: 'مميز',
     badge_label_en: 'Featured',
@@ -149,8 +135,6 @@ const scripts = [
     title_en: 'Crafting System',
     desc_ar: 'نظام تصنيع واقعي ومتنوع: وصفات، مواد، شريط تقدم وطاولات عمل.',
     desc_en: 'Realistic and varied crafting: recipes, materials, progress bar and workbenches.',
-    price_sar: 200,
-    price_usd: 53,
     badge: null,
     badge_label_ar: '',
     badge_label_en: '',
@@ -169,8 +153,6 @@ const scripts = [
     title_en: 'Fuel Stations System',
     desc_ar: 'نظام تعبئة الوقود بتفاصيل واقعية: عادي وممتاز، كمية، سعر وإجمالي.',
     desc_en: 'Realistic fueling system: regular and premium, quantity, price and total.',
-    price_sar: 160,
-    price_usd: 43,
     badge: 'custom',
     badge_label_ar: 'مخصص',
     badge_label_en: 'Custom',
@@ -261,7 +243,6 @@ function renderScripts(filter = 'all') {
     const desc = lang === 'ar' ? s.desc_ar : s.desc_en;
     const cat = lang === 'ar' ? s.cat_ar : s.cat_en;
     const features = lang === 'ar' ? s.features_ar : s.features_en;
-    const price = lang === 'ar' ? `${s.price_sar} ر.س` : `$${s.price_usd}`;
     const badgeLabel = s.badge ? (lang === 'ar' ? s.badge_label_ar : s.badge_label_en) : '';
     const img = s.images && s.images.length > 0 ? s.images[0] : `https://placehold.co/600x400/12121e/00ff87?text=${encodeURIComponent(s.emoji + ' ' + title)}`;
 
@@ -280,8 +261,7 @@ function renderScripts(filter = 'all') {
           ${features.slice(0, 4).map(f => `<span class="feature-tag">${f}</span>`).join('')}
         </div>
         <div class="script-card-footer">
-          <div class="script-price">${price}</div>
-          <button class="btn-card" onclick="event.stopPropagation(); openCheckout(${s.id})">${lang === 'ar' ? 'شراء الآن' : 'Buy Now'}</button>
+          <button class="btn-card" onclick="event.stopPropagation(); requestScript(${s.id})">${lang === 'ar' ? 'اطلب الآن' : 'Request Now'}</button>
         </div>
       </div>
     </div>`;
@@ -307,7 +287,6 @@ function openModal(id) {
   const desc = lang === 'ar' ? s.desc_ar : s.desc_en;
   const cat = lang === 'ar' ? s.cat_ar : s.cat_en;
   const features = lang === 'ar' ? s.features_ar : s.features_en;
-  const price = lang === 'ar' ? `${s.price_sar} <span>ر.س</span>` : `$${s.price_usd} <span>USD</span>`;
 
   // Build slider images from local SVG files
   const sliderImgs = s.images.map((imgUrl, i) => {
@@ -329,10 +308,8 @@ function openModal(id) {
   document.getElementById('modal-title').textContent = title;
   document.getElementById('modal-desc').textContent = desc;
   document.getElementById('modal-features-list').innerHTML = features.map(f => `<div class="modal-feature-item">${f}</div>`).join('');
-  document.getElementById('modal-price').innerHTML = price;
   document.getElementById('modal-features-title').textContent = lang === 'ar' ? 'المميزات' : 'Features';
-  document.getElementById('modal-btn-buy').textContent = lang === 'ar' ? 'شراء الآن' : 'Buy Now';
-  document.getElementById('modal-btn-custom').textContent = lang === 'ar' ? 'طلب تعديل' : 'Request Modification';
+  document.getElementById('modal-btn-buy').textContent = lang === 'ar' ? 'اطلب الآن' : 'Request Now';
 
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -367,147 +344,61 @@ function setModalSlide(idx) {
 }
 
 // ===== CHECKOUT =====
-let checkoutScript = null;
 
-function openCheckout(id) {
-  const s = scripts.find(x => x.id === id);
-  if (!s) return;
-  checkoutScript = s;
+function requestScript(id) {
+  const select = document.getElementById('custom-script');
+  closeModal();
+  if (select) select.value = String(id);
+  document.getElementById('custom').scrollIntoView({ behavior: 'smooth' });
+}
+
+function populateScriptSelect() {
+  const select = document.getElementById('custom-script');
+  if (!select) return;
   const lang = currentLang;
-  const title = lang === 'ar' ? s.title_ar : s.title_en;
-  const basePrice = lang === 'ar' ? s.price_sar : s.price_usd;
-  const currency = lang === 'ar' ? 'ر.س' : '$';
-  const tax = (basePrice * 0.15).toFixed(2);
-  const total = (basePrice * 1.15).toFixed(2);
-
-  document.getElementById('checkout-name').textContent = title;
-  document.getElementById('checkout-base').textContent = `${basePrice} ${currency}`;
-  document.getElementById('checkout-tax').textContent = `${tax} ${currency}`;
-  document.getElementById('checkout-total-amt').textContent = `${total} ${currency}`;
-  document.getElementById('checkout-title').textContent = lang === 'ar' ? 'إتمام الشراء' : 'Complete Purchase';
-  document.getElementById('checkout-subtitle').textContent = lang === 'ar' ? 'اختر طريقة الدفع' : 'Choose payment method';
-  document.getElementById('checkout-label-subtotal').textContent = lang === 'ar' ? 'المجموع' : 'Subtotal';
-  document.getElementById('checkout-label-tax').textContent = lang === 'ar' ? 'الضريبة 15%' : 'Tax 15%';
-  document.getElementById('checkout-label-total').textContent = lang === 'ar' ? 'الإجمالي' : 'Total';
-  document.getElementById('checkout-btn-paypal').textContent = lang === 'ar' ? '💳 الدفع عبر PayPal' : '💳 Pay with PayPal';
-  document.getElementById('checkout-btn-stc').textContent = lang === 'ar' ? '📱 الدفع عبر STC Pay' : '📱 Pay with STC Pay';
-  document.getElementById('checkout-cancel').textContent = lang === 'ar' ? 'إلغاء' : 'Cancel';
-
-  document.getElementById('checkout-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  const prev = select.value;
+  select.innerHTML = scripts.map(s => `<option value="${s.id}">${lang === 'ar' ? s.title_ar : s.title_en}</option>`).join('')
+    + `<option value="custom">${lang === 'ar' ? 'سكربت مخصص / فكرة جديدة' : 'Custom script / new idea'}</option>`;
+  if (prev) select.value = prev;
 }
 
-function closeCheckout() {
-  document.getElementById('checkout-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function payWith(method) {
+async function doCustomOrder(e) {
+  e.preventDefault();
   const lang = currentLang;
-  showToast(lang === 'ar' ? 'جارٍ تحويلك لصفحة الدفع...' : 'Redirecting to payment...', 'info');
-  setTimeout(() => {
-    closeCheckout();
-    if (method === 'paypal') {
-      // PayPal redirect would go here
-      window.open('https://www.paypal.com', '_blank');
-    } else if (method === 'stc') {
-      showToast(lang === 'ar' ? 'سيتم إرسال رابط الدفع على رقمك' : 'Payment link will be sent to your phone', 'info');
-    }
-    showToast(lang === 'ar' ? 'شكراً! سيتم التواصل معك قريباً' : 'Thank you! We\'ll contact you soon', 'success', 5000);
-  }, 1000);
-}
-
-// ===== AUTH =====
-let currentUser = JSON.parse(localStorage.getItem('user') || 'null');
-
-function openAuth(tab = 'login') {
-  document.getElementById('auth-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-  switchAuthTab(tab);
-}
-
-function closeAuth() {
-  document.getElementById('auth-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function switchAuthTab(tab) {
-  document.querySelectorAll('.auth-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
-  document.querySelectorAll('.auth-form').forEach(f => f.classList.toggle('active', f.id === `form-${tab}`));
-}
-
-function updateAuthUI() {
-  const loginBtn = document.getElementById('nav-login-btn');
-  const registerBtn = document.getElementById('nav-register-btn');
-  const userMenuWrap = document.getElementById('user-menu-wrap');
-
-  if (currentUser) {
-    if (loginBtn) loginBtn.style.display = 'none';
-    if (registerBtn) registerBtn.style.display = 'none';
-    if (userMenuWrap) {
-      userMenuWrap.style.display = 'flex';
-      const avatarBtn = userMenuWrap.querySelector('.user-avatar-btn');
-      if (avatarBtn) avatarBtn.textContent = currentUser.name[0].toUpperCase();
-      const nameEl = userMenuWrap.querySelector('.user-dropdown-name');
-      const emailEl = userMenuWrap.querySelector('.user-dropdown-email');
-      if (nameEl) nameEl.textContent = currentUser.name;
-      if (emailEl) emailEl.textContent = currentUser.email;
-    }
-  } else {
-    if (loginBtn) loginBtn.style.display = '';
-    if (registerBtn) registerBtn.style.display = '';
-    if (userMenuWrap) userMenuWrap.style.display = 'none';
-  }
-}
-
-function doLogin(e) {
-  e.preventDefault();
-  const email = document.getElementById('login-email').value;
-  const pass = document.getElementById('login-pass').value;
-  if (!email || !pass) {
+  const form = e.target;
+  const btn = document.getElementById('custom-submit');
+  const select = document.getElementById('custom-script');
+  const data = {
+    name: document.getElementById('custom-name').value.trim(),
+    discord: document.getElementById('custom-discord').value.trim(),
+    email: document.getElementById('custom-email').value.trim(),
+    script: select.options[select.selectedIndex].text,
+    framework: document.getElementById('custom-framework').value,
+    details: document.getElementById('custom-desc').value.trim(),
+    website: document.getElementById('custom-website').value
+  };
+  if (!data.name || !data.discord || !data.details) {
     showToast(t('toast_fill_all'), 'error'); return;
   }
-  // Simulate login
-  currentUser = { name: email.split('@')[0], email };
-  localStorage.setItem('user', JSON.stringify(currentUser));
-  updateAuthUI();
-  closeAuth();
-  showToast(t('toast_login_ok'), 'success');
-}
-
-function doRegister(e) {
-  e.preventDefault();
-  const name = document.getElementById('reg-name').value;
-  const email = document.getElementById('reg-email').value;
-  const pass = document.getElementById('reg-pass').value;
-  if (!name || !email || !pass) {
-    showToast(t('toast_fill_all'), 'error'); return;
+  const label = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = lang === 'ar' ? 'جارٍ الإرسال...' : 'Sending...';
+  try {
+    const res = await fetch('/.netlify/functions/order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('send failed');
+    showToast(t('toast_order_sent'), 'success', 5000);
+    form.reset();
+    populateScriptSelect();
+  } catch (err) {
+    showToast(lang === 'ar' ? 'تعذر إرسال الطلب، حاول مرة أخرى أو تواصل معنا على الديسكورد' : 'Could not send the request. Please try again or contact us on Discord', 'error', 6000);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = label;
   }
-  currentUser = { name, email };
-  localStorage.setItem('user', JSON.stringify(currentUser));
-  updateAuthUI();
-  closeAuth();
-  showToast(t('toast_register_ok'), 'success');
-}
-
-function doLogout() {
-  currentUser = null;
-  localStorage.removeItem('user');
-  updateAuthUI();
-  showToast(currentLang === 'ar' ? 'تم تسجيل الخروج' : 'Logged out', 'info');
-}
-
-// ===== CUSTOM FORM =====
-function doCustomOrder(e) {
-  e.preventDefault();
-  const name = document.getElementById('custom-name').value;
-  const email = document.getElementById('custom-email').value;
-  const desc = document.getElementById('custom-desc').value;
-  if (!name || !email || !desc) {
-    showToast(t('toast_fill_all'), 'error'); return;
-  }
-  showToast(t('toast_order_sent'), 'success', 5000);
-  e.target.reset();
 }
 
 // ===== FAQ =====
@@ -621,7 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFilters();
   initParticles();
   initNewsletter();
-  updateAuthUI();
+  populateScriptSelect();
   observeReveal();
 
   // Counter observer
@@ -632,27 +523,12 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('modal-overlay').addEventListener('click', e => {
     if (e.target.id === 'modal-overlay') closeModal();
   });
-  document.getElementById('checkout-overlay').addEventListener('click', e => {
-    if (e.target.id === 'checkout-overlay') closeCheckout();
-  });
-  document.getElementById('auth-overlay').addEventListener('click', e => {
-    if (e.target.id === 'auth-overlay') closeAuth();
-  });
-
-  // Auth forms
-  document.getElementById('login-form')?.addEventListener('submit', doLogin);
-  document.getElementById('register-form')?.addEventListener('submit', doRegister);
   document.getElementById('custom-form')?.addEventListener('submit', doCustomOrder);
-
-  // Auth tabs
-  document.querySelectorAll('.auth-tab').forEach(t => {
-    t.addEventListener('click', () => switchAuthTab(t.dataset.tab));
-  });
 
   // Re-render on language change
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      setTimeout(() => renderScripts(), 50);
+      setTimeout(() => { renderScripts(); populateScriptSelect(); }, 50);
     });
   });
 

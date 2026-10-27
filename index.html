@@ -153,20 +153,6 @@
       <button class="lang-btn active" data-lang="ar">العربية</button>
       <button class="lang-btn" data-lang="en">English</button>
     </div>
-    <button class="nav-btn btn-outline" id="nav-login-btn" onclick="openAuth('login')" data-i18n="nav_login">تسجيل الدخول</button>
-    <button class="nav-btn btn-primary" id="nav-register-btn" onclick="openAuth('register')" data-i18n="nav_register">إنشاء حساب</button>
-    <div class="user-menu-wrap" id="user-menu-wrap" style="display:none">
-      <button class="user-avatar-btn">U</button>
-      <div class="user-dropdown">
-        <div class="user-dropdown-header">
-          <div class="user-dropdown-name"></div>
-          <div class="user-dropdown-email"></div>
-        </div>
-        <button class="dropdown-item">📦 <span data-i18n="nav_dashboard">لوحة التحكم</span></button>
-        <button class="dropdown-item">⚙️ <span>الإعدادات</span></button>
-        <button class="dropdown-item danger" onclick="doLogout()">🚪 <span data-i18n="nav_logout">تسجيل الخروج</span></button>
-      </div>
-    </div>
   </div>
 
   <div class="hamburger" id="hamburger">
@@ -181,10 +167,6 @@
   <a href="#custom" data-i18n="nav_custom">طلب مخصص</a>
   <a href="#about" data-i18n="nav_about">من نحن</a>
   <a href="#contact" data-i18n="nav_contact">تواصل معنا</a>
-  <div style="display:flex; gap:8px; padding: 8px 16px; margin-top: 8px;">
-    <button class="nav-btn btn-outline" style="flex:1" onclick="openAuth('login')" data-i18n="nav_login">تسجيل الدخول</button>
-    <button class="nav-btn btn-primary" style="flex:1" onclick="openAuth('register')" data-i18n="nav_register">إنشاء حساب</button>
-  </div>
 </div>
 
 <!-- ===== HERO ===== -->
@@ -269,8 +251,8 @@
     </div>
     <div class="step-card reveal">
       <div class="step-num">3</div>
-      <h3 class="step-title" data-i18n="step3_title">الدفع الآمن</h3>
-      <p class="step-desc" data-i18n="step3_desc">ادفع بأمان عبر PayPal أو STC Pay مع ضمان استرداد المبلغ</p>
+      <h3 class="step-title" data-i18n="step3_title">نتفق على التفاصيل</h3>
+      <p class="step-desc" data-i18n="step3_desc">نتواصل معك عبر الديسكورد لنتفق على التفاصيل وطريقة التسليم</p>
     </div>
     <div class="step-card reveal">
       <div class="step-num">4</div>
@@ -313,62 +295,43 @@
 
     <div class="form-card reveal">
       <h3 class="form-title" data-i18n="form_title">ابدأ طلبك الآن</h3>
-      <form id="custom-form" onsubmit="doCustomOrder(event)">
+      <form id="custom-form" novalidate>
+        <input type="text" id="custom-website" name="website" tabindex="-1" autocomplete="off" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); opacity:0; pointer-events:none;" aria-hidden="true">
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" data-i18n="form_name">الاسم الكامل</label>
-            <input type="text" class="form-input" id="custom-name" data-i18n-attr="placeholder:form_name" placeholder="الاسم الكامل">
+            <input type="text" class="form-input" id="custom-name" maxlength="80" data-i18n-attr="placeholder:form_name" placeholder="الاسم الكامل">
           </div>
           <div class="form-group">
-            <label class="form-label" data-i18n="form_email">البريد الإلكتروني</label>
-            <input type="email" class="form-input" id="custom-email" data-i18n-attr="placeholder:form_email" placeholder="البريد الإلكتروني">
+            <label class="form-label" data-i18n="form_discord">معرّف الديسكورد</label>
+            <input type="text" class="form-input" id="custom-discord" maxlength="64" placeholder="username">
           </div>
         </div>
         <div class="form-group">
-          <label class="form-label" data-i18n="form_discord">معرّف الديسكورد</label>
-          <input type="text" class="form-input" placeholder="username#0000">
+          <label class="form-label" data-i18n="form_email">البريد الإلكتروني</label>
+          <input type="email" class="form-input" id="custom-email" maxlength="120" data-i18n-attr="placeholder:form_email" placeholder="البريد الإلكتروني (اختياري)">
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label" data-i18n="form_type">نوع السكربت</label>
-            <select class="form-select">
-              <option value="" data-i18n="form_type_opt">اختر نوع السكربت...</option>
-              <option>وظيفة جديدة</option>
-              <option>نظام اقتصادي</option>
-              <option>واجهة مستخدم</option>
-              <option>نظام منازل</option>
-              <option>نظام مركبات</option>
-              <option>نظام شرطة</option>
+            <label class="form-label" data-i18n="form_type">السكربت المطلوب</label>
+            <select class="form-select" id="custom-script"></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="form_framework">الفريمووورك المستخدم</label>
+            <select class="form-select" id="custom-framework">
+              <option>ESX</option>
+              <option>QBCore</option>
+              <option>VRP</option>
+              <option>Standalone</option>
               <option>أخرى</option>
             </select>
           </div>
-          <div class="form-group">
-            <label class="form-label" data-i18n="form_budget">الميزانية</label>
-            <select class="form-select">
-              <option value="" data-i18n="form_budget_opt">اختر الميزانية...</option>
-              <option>أقل من 100 ر.س</option>
-              <option>100 - 300 ر.س</option>
-              <option>300 - 600 ر.س</option>
-              <option>600 - 1000 ر.س</option>
-              <option>أكثر من 1000 ر.س</option>
-            </select>
-          </div>
         </div>
         <div class="form-group">
-          <label class="form-label" data-i18n="form_framework">الفريمووورك المستخدم</label>
-          <select class="form-select">
-            <option>ESX</option>
-            <option>QBCore</option>
-            <option>VRP</option>
-            <option>Standalone</option>
-            <option>أخرى</option>
-          </select>
+          <label class="form-label" data-i18n="form_desc">تفاصيل الطلب</label>
+          <textarea class="form-textarea" id="custom-desc" rows="4" maxlength="1500" data-i18n-attr="placeholder:form_desc_ph" placeholder="اشرح لنا طلبك أو فكرتك بالتفصيل..."></textarea>
         </div>
-        <div class="form-group">
-          <label class="form-label" data-i18n="form_desc">وصف الفكرة</label>
-          <textarea class="form-textarea" id="custom-desc" rows="4" data-i18n-attr="placeholder:form_desc_ph" placeholder="اشرح لنا فكرتك بالتفصيل..."></textarea>
-        </div>
-        <button type="submit" class="btn-submit" data-i18n="btn_submit">إرسال الطلب 🚀</button>
+        <button type="submit" class="btn-submit" id="custom-submit" data-i18n="btn_submit">إرسال الطلب 🚀</button>
       </form>
     </div>
   </div>
@@ -438,31 +401,6 @@
 </section>
 
 <!-- ===== PAYMENT SECTION ===== -->
-<section class="payment-section" id="payment" style="border-top:1px solid var(--border);">
-  <div class="section-header reveal">
-    <div class="section-tag" data-i18n="payment_tag">طرق الدفع</div>
-    <h2 class="section-title" data-i18n="payment_title">ادفع بأمان وسهولة</h2>
-    <div class="divider-line"></div>
-    <p class="section-desc" style="margin-top:16px" data-i18n="payment_desc">نقبل طرق الدفع الأكثر شيوعاً في المنطقة</p>
-  </div>
-  <div class="payment-methods">
-    <div class="payment-card paypal reveal" onclick="openAuth('login')">
-      <div class="payment-logo">💳</div>
-      <div class="payment-name" data-i18n="paypal_name">PayPal</div>
-      <div class="payment-desc" data-i18n="paypal_desc">الدفع الإلكتروني الأكثر شيوعاً عالمياً</div>
-      <div style="font-size:2.5rem; margin-bottom:12px; font-weight:900; color:#0070ba;">PayPal</div>
-      <span class="payment-badge badge-secure" data-i18n="paypal_badge">دفع آمن عالمي</span>
-    </div>
-    <div class="payment-card stc reveal" onclick="openAuth('login')">
-      <div class="payment-logo">📱</div>
-      <div class="payment-name" data-i18n="stc_name">STC Pay</div>
-      <div class="payment-desc" data-i18n="stc_desc">الدفع الإلكتروني السعودي الأسرع</div>
-      <div style="font-size:2.5rem; margin-bottom:12px; font-weight:900; color:#7ed321;">STC Pay</div>
-      <span class="payment-badge badge-local" data-i18n="stc_badge">خدمة سعودية محلية</span>
-    </div>
-  </div>
-</section>
-
 <!-- ===== TESTIMONIALS ===== -->
 <section style="border-top:1px solid var(--border);" id="reviews">
   <div class="section-header reveal">
@@ -517,7 +455,7 @@
     </div>
     <div class="testimonial-card reveal">
       <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">"الدفع سهل عبر STC Pay والتسليم كان فوري. السكربت شغال بدون أي مشاكل من أول تثبيت. خدمة ممتازة جداً"</p>
+      <p class="testimonial-text">"الطلب كان سهل والتسليم كان سريع. السكربت شغال بدون أي مشاكل من أول تثبيت. خدمة ممتازة جداً"</p>
       <div class="testimonial-author">
         <div class="author-avatar">ع</div>
         <div>
@@ -550,10 +488,10 @@
   <div class="faq-container">
     <div class="faq-item reveal">
       <div class="faq-question">
-        <span data-i18n="faq1_q">كيف أحصل على السكربت بعد الشراء؟</span>
+        <span data-i18n="faq1_q">كيف أحصل على السكربت؟</span>
         <div class="faq-icon">+</div>
       </div>
-      <div class="faq-answer" data-i18n="faq1_a">بعد إتمام عملية الدفع، ستصلك رسالة فورية على بريدك الإلكتروني تحتوي على رابط تحميل السكربت مع تعليمات التثبيت الكاملة.</div>
+      <div class="faq-answer" data-i18n="faq1_a">أرسل طلبك من الموقع وسيصلنا على الديسكورد، ثم نتواصل معك لنتفق على التفاصيل ونسلّمك السكربت مع تعليمات التثبيت.</div>
     </div>
     <div class="faq-item reveal">
       <div class="faq-question">
@@ -567,7 +505,7 @@
         <span data-i18n="faq3_q">هل يوجد ضمان على السكربتات؟</span>
         <div class="faq-icon">+</div>
       </div>
-      <div class="faq-answer" data-i18n="faq3_a">نعم، نقدم ضمان 30 يوماً على جميع السكربتات.</div>
+      <div class="faq-answer" data-i18n="faq3_a">نعم، نضمن عمل السكربت، وإذا واجهت أي مشكلة تقنية سنقوم بإصلاحها مجاناً.</div>
     </div>
     <div class="faq-item reveal">
       <div class="faq-question">
@@ -578,7 +516,7 @@
     </div>
     <div class="faq-item reveal">
       <div class="faq-question">
-        <span data-i18n="faq5_q">هل تقدمون دعماً فنياً بعد الشراء؟</span>
+        <span data-i18n="faq5_q">هل تقدمون دعماً فنياً بعد التسليم؟</span>
         <div class="faq-icon">+</div>
       </div>
       <div class="faq-answer" data-i18n="faq5_a">بالطبع! نقدم دعم فني مجاني لمدة 6 أشهر بعد الشراء.</div>
@@ -689,122 +627,11 @@
         <div class="modal-features-list" id="modal-features-list"></div>
       </div>
       <div class="modal-footer">
-        <div class="modal-price" id="modal-price"></div>
         <div class="modal-actions">
-          <button class="btn-buy" id="modal-btn-buy" onclick="currentModalScript && openCheckout(currentModalScript.id)">شراء الآن</button>
-          <button class="btn-custom-order" id="modal-btn-custom" onclick="closeModal(); document.getElementById('custom').scrollIntoView({behavior:'smooth'})">طلب تعديل</button>
+          <button class="btn-buy" id="modal-btn-buy" onclick="currentModalScript && requestScript(currentModalScript.id)">اطلب الآن</button>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- ===== CHECKOUT MODAL ===== -->
-<div class="checkout-overlay" id="checkout-overlay">
-  <div class="checkout-modal">
-    <h2 class="checkout-title" id="checkout-title">إتمام الشراء</h2>
-    <p class="checkout-subtitle" id="checkout-subtitle">اختر طريقة الدفع المناسبة</p>
-    <div class="checkout-item">
-      <span id="checkout-name">-</span>
-      <span id="checkout-base">-</span>
-    </div>
-    <div class="checkout-item">
-      <span id="checkout-label-tax">الضريبة 15%</span>
-      <span id="checkout-tax">-</span>
-    </div>
-    <div class="checkout-total">
-      <span id="checkout-label-total">الإجمالي</span>
-      <span class="amount" id="checkout-total-amt">-</span>
-    </div>
-    <div class="checkout-methods">
-      <button class="checkout-method-btn paypal" id="checkout-btn-paypal" onclick="payWith('paypal')">💳 الدفع عبر PayPal</button>
-      <button class="checkout-method-btn stc" id="checkout-btn-stc" onclick="payWith('stc')">📱 الدفع عبر STC Pay</button>
-      <button class="checkout-cancel" id="checkout-cancel" onclick="closeCheckout()">إلغاء</button>
-    </div>
-  </div>
-</div>
-
-<!-- ===== AUTH MODAL ===== -->
-<div class="auth-overlay" id="auth-overlay">
-  <div class="auth-modal">
-    <button class="btn-close" style="position:absolute; top:16px; left:16px;" onclick="closeAuth()">✕</button>
-    <div class="auth-logo">
-      <svg width="56" height="56" viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="10" fill="url(#authLogoGrad)"/>
-        <path d="M8 20L14 12L20 16L26 8L32 20" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="20" cy="28" r="4" fill="white" opacity="0.9"/>
-        <defs>
-          <linearGradient id="authLogoGrad" x1="0" y1="0" x2="40" y2="40">
-            <stop stop-color="#00ff87"/><stop offset="1" stop-color="#0a84ff"/>
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
-    <h2 class="auth-title" id="auth-title" data-i18n="auth_login_title">مرحباً بعودتك</h2>
-    <p class="auth-subtitle" id="auth-subtitle" data-i18n="auth_login_sub">سجّل دخولك للوصول إلى حسابك</p>
-    <div class="auth-tabs">
-      <button class="auth-tab active" data-tab="login" data-i18n="tab_login">تسجيل الدخول</button>
-      <button class="auth-tab" data-tab="register" data-i18n="tab_register">حساب جديد</button>
-    </div>
-
-    <!-- Login Form -->
-    <form class="auth-form active" id="form-login">
-      <button type="button" class="btn-google">
-        <span style="font-size:1.1rem">G</span> <span data-i18n="btn_google">المتابعة مع Google</span>
-      </button>
-      <div class="divider"><span data-i18n="or_login_with">أو</span></div>
-      <div class="form-group">
-        <label class="form-label" data-i18n="form_email">البريد الإلكتروني</label>
-        <input type="email" class="form-input" id="login-email" data-i18n-attr="placeholder:form_email" placeholder="البريد الإلكتروني">
-      </div>
-      <div class="form-group">
-        <label class="form-label" data-i18n="form_password">كلمة المرور</label>
-        <input type="password" class="form-input" id="login-pass" data-i18n-attr="placeholder:form_password" placeholder="كلمة المرور">
-      </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
-        <label class="form-check" style="margin:0">
-          <input type="checkbox"> <span data-i18n="remember_me">تذكرني</span>
-        </label>
-        <a href="#" style="font-size:0.85rem; color:var(--primary); text-decoration:none;" data-i18n="forgot_pass">نسيت كلمة المرور؟</a>
-      </div>
-      <button type="submit" class="btn-submit" data-i18n="btn_login">تسجيل الدخول</button>
-    </form>
-
-    <!-- Register Form -->
-    <form class="auth-form" id="form-register">
-      <button type="button" class="btn-google">
-        <span style="font-size:1.1rem">G</span> <span data-i18n="btn_google">المتابعة مع Google</span>
-      </button>
-      <div class="divider"><span data-i18n="or_login_with">أو</span></div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label" data-i18n="form_name">الاسم</label>
-          <input type="text" class="form-input" id="reg-name" placeholder="الاسم الكامل">
-        </div>
-        <div class="form-group">
-          <label class="form-label" data-i18n="form_phone">الجوال</label>
-          <input type="tel" class="form-input" placeholder="+966">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="form-label" data-i18n="form_email">البريد الإلكتروني</label>
-        <input type="email" class="form-input" id="reg-email" placeholder="example@email.com">
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label" data-i18n="form_password">كلمة المرور</label>
-          <input type="password" class="form-input" id="reg-pass" placeholder="••••••••">
-        </div>
-        <div class="form-group">
-          <label class="form-label" data-i18n="form_confirm_pass">تأكيد كلمة المرور</label>
-          <input type="password" class="form-input" placeholder="••••••••">
-        </div>
-      </div>
-      <label class="form-check">
-        <input type="checkbox"> <span data-i18n="agree_terms">أوافق على الشروط والأحكام</span>
-      </label>
-      <button type="submit" class="btn-submit" data-i18n="btn_register">إنشاء الحساب</button>
-    </form>
   </div>
 </div>
 
