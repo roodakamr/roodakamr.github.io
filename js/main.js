@@ -288,12 +288,12 @@ function renderScripts(filter = 'all') {
     const features = lang === 'ar' ? s.features_ar : s.features_en;
     const price = lang === 'ar' ? `${s.price_sar} ر.س` : `$${s.price_usd}`;
     const badgeLabel = s.badge ? (lang === 'ar' ? s.badge_label_ar : s.badge_label_en) : '';
-    const img = `https://placehold.co/600x400/12121e/00ff87?text=${encodeURIComponent(s.emoji + ' ' + title)}`;
+    const img = s.images && s.images.length > 0 ? s.images[0] : `https://placehold.co/600x400/12121e/00ff87?text=${encodeURIComponent(s.emoji + ' ' + title)}`;
 
     return `
     <div class="script-card reveal" data-id="${s.id}" onclick="openModal(${s.id})">
       <div class="script-card-media">
-        <img src="${img}" alt="${title}" loading="lazy">
+        <img src="${img}" alt="${title}" loading="lazy" onerror="this.src='https://placehold.co/600x400/12121e/00ff87?text=${encodeURIComponent(s.emoji)}'">
         ${s.badge ? `<div class="card-badge badge-${s.badge}">${badgeLabel}</div>` : ''}
         <div class="media-overlay"><span class="media-overlay-text">${lang === 'ar' ? 'انقر لعرض التفاصيل' : 'Click for details'}</span></div>
       </div>
@@ -334,14 +334,12 @@ function openModal(id) {
   const features = lang === 'ar' ? s.features_ar : s.features_en;
   const price = lang === 'ar' ? `${s.price_sar} <span>ر.س</span>` : `$${s.price_usd} <span>USD</span>`;
 
-  // Build slider images - use placeholders
-  const imgCount = Math.max(s.images.length, 3);
-  const sliderImgs = Array.from({length: imgCount}, (_, i) => {
-    const imgUrl = `https://placehold.co/900x380/0a0a12/00ff87?text=${encodeURIComponent(s.emoji + ' Screenshot ' + (i+1))}`;
-    return `<img src="${imgUrl}" alt="${title} ${i+1}" class="${i===0?'active':''}" data-idx="${i}">`;
+  // Build slider images from local SVG files
+  const sliderImgs = s.images.map((imgUrl, i) => {
+    return `<img src="${imgUrl}" alt="${title} ${i+1}" class="${i===0?'active':''}" data-idx="${i}" onerror="this.src='https://placehold.co/900x380/0a0a12/00ff87?text=${encodeURIComponent(s.emoji)}'">`;
   }).join('');
 
-  const dots = Array.from({length: imgCount}, (_, i) =>
+  const dots = Array.from({length: s.images.length}, (_, i) =>
     `<span class="modal-dot ${i===0?'active':''}" onclick="setModalSlide(${i})"></span>`
   ).join('');
 
