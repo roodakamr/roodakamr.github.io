@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RoodaScripts - أفضل سكربتات FiveM احترافية. تطوير مخصص حسب الطلب. Best FiveM scripts in Arabic region.">
+  <meta name="keywords" content="FiveM, سكربتات, scripts, ESX, QBCore, FiveM scripts, رودا سكربتات">
+  <meta property="og:title" content="RoodaScripts | سكربتات FiveM الاحترافية">
+  <meta property="og:description" content="أفضل سكربتات FiveM في المنطقة العربية">
+  <meta property="og:type" content="website">
+  <title>RoodaScripts | سكربتات FiveM الاحترافية</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;700;800;900&family=Rajdhani:wght@400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Filter buttons */
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: var(--transition);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: rgba(0,255,135,0.1);
+      border-color: var(--border-hover);
+      color: var(--primary);
+    }
+
+    /* Gradient divider */
+    .divider-line {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 2px;
+      margin: 16px auto 0;
+    }
+
+    /* About teaser */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .about-visual {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .about-stat-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .about-stat-box {
+      flex: 1;
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+    }
+    .about-stat-box .num { font-size: 1.8rem; font-weight: 900; color: var(--primary); }
+    .about-stat-box .lbl { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tech-tag {
+      padding: 6px 14px;
+      border-radius: 6px;
+      background: rgba(0,255,135,0.06);
+      border: 1px solid rgba(0,255,135,0.15);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .tech-tag.blue {
+      background: rgba(10,132,255,0.06);
+      border-color: rgba(10,132,255,0.15);
+      color: var(--secondary);
+    }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body class="lang-ar">
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="preloader-logo">RoodaScripts</div>
+  <div style="color: var(--text-muted); font-size: 0.85rem; margin-top: -12px;">سكربتات FiveM الاحترافية</div>
+  <div class="preloader-bar"></div>
+</div>
+
+<!-- PARTICLES -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">
+    <!-- Logo SVG -->
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="40" height="40" rx="10" fill="url(#logoGrad)"/>
+      <path d="M8 20L14 12L20 16L26 8L32 20" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="20" cy="28" r="4" fill="white" opacity="0.9"/>
+      <path d="M16 28H24" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      <defs>
+        <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40">
+          <stop stop-color="#00ff87"/>
+          <stop offset="1" stop-color="#0a84ff"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <div>
+      <span class="nav-logo-text">RoodaScripts</span>
+      <span class="nav-logo-sub">سكربتات FiveM</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#home" class="active" data-i18n="nav_home">الرئيسية</a></li>
+    <li><a href="#scripts" data-i18n="nav_scripts">السكربتات</a></li>
+    <li><a href="#custom" data-i18n="nav_custom">طلب مخصص</a></li>
+    <li><a href="#about" data-i18n="nav_about">من نحن</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">تواصل معنا</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="ar">العربية</button>
+      <button class="lang-btn" data-lang="en">English</button>
+    </div>
+    <button class="nav-btn btn-outline" id="nav-login-btn" onclick="openAuth('login')" data-i18n="nav_login">تسجيل الدخول</button>
+    <button class="nav-btn btn-primary" id="nav-register-btn" onclick="openAuth('register')" data-i18n="nav_register">إنشاء حساب</button>
+    <div class="user-menu-wrap" id="user-menu-wrap" style="display:none">
+      <button class="user-avatar-btn">U</button>
+      <div class="user-dropdown">
+        <div class="user-dropdown-header">
+          <div class="user-dropdown-name"></div>
+          <div class="user-dropdown-email"></div>
+        </div>
+        <button class="dropdown-item">📦 <span data-i18n="nav_dashboard">لوحة التحكم</span></button>
+        <button class="dropdown-item">⚙️ <span>الإعدادات</span></button>
+        <button class="dropdown-item danger" onclick="doLogout()">🚪 <span data-i18n="nav_logout">تسجيل الخروج</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#home" data-i18n="nav_home">الرئيسية</a>
+  <a href="#scripts" data-i18n="nav_scripts">السكربتات</a>
+  <a href="#custom" data-i18n="nav_custom">طلب مخصص</a>
+  <a href="#about" data-i18n="nav_about">من نحن</a>
+  <a href="#contact" data-i18n="nav_contact">تواصل معنا</a>
+  <div style="display:flex; gap:8px; padding: 8px 16px; margin-top: 8px;">
+    <button class="nav-btn btn-outline" style="flex:1" onclick="openAuth('login')" data-i18n="nav_login">تسجيل الدخول</button>
+    <button class="nav-btn btn-primary" style="flex:1" onclick="openAuth('register')" data-i18n="nav_register">إنشاء حساب</button>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div>
+    <div class="hero-badge" data-i18n="hero_badge">أفضل سكربتات FiveM</div>
+    <h1 class="hero-title">
+      <span data-i18n="hero_title_1">سكربتات</span>
+      <br>
+      <span class="gradient-text" data-i18n="hero_title_2">احترافية</span>
+      <br>
+      <span data-i18n="hero_title_3">لسيرفرك</span>
+    </h1>
+    <p class="hero-subtitle" data-i18n="hero_subtitle">
+      نقدم أفضل السكربتات لـ FiveM بأداء عالي وكود نظيف. من الأنظمة الجاهزة إلى التطوير المخصص حسب طلبك
+    </p>
+    <div class="hero-ctas">
+      <a href="#scripts" class="btn-hero-primary" data-i18n="hero_btn1">تصفح السكربتات</a>
+      <a href="#custom" class="btn-hero-secondary" data-i18n="hero_btn2">طلب مخصص</a>
+    </div>
+    <div class="hero-stats" id="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-target="50" data-suffix="+">0</span>
+        <div class="hero-stat-label" data-i18n="stat_scripts">سكربت متاح</div>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-target="500" data-suffix="+">0</span>
+        <div class="hero-stat-label" data-i18n="stat_clients">عميل راضٍ</div>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-target="200" data-suffix="+">0</span>
+        <div class="hero-stat-label" data-i18n="stat_servers">سيرفر يستخدمنا</div>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-target="24" data-suffix="/7">0</span>
+        <div class="hero-stat-label" data-i18n="stat_support">دعم فوري</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCRIPTS SECTION ===== -->
+<section id="scripts">
+  <div class="section-header reveal">
+    <div class="section-tag" data-i18n="scripts_tag">مكتبة السكربتات</div>
+    <h2 class="section-title" data-i18n="scripts_title">سكربتاتنا المميزة</h2>
+    <div class="divider-line"></div>
+    <p class="section-desc" style="margin-top:16px" data-i18n="scripts_desc">اكتشف مجموعة واسعة من السكربتات الاحترافية المصممة خصيصاً لـ FiveM</p>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all" data-i18n="filter_all">الكل</button>
+    <button class="filter-btn" data-filter="jobs" data-i18n="filter_jobs">الوظائف</button>
+    <button class="filter-btn" data-filter="vehicles" data-i18n="filter_vehicles">المركبات</button>
+    <button class="filter-btn" data-filter="police" data-i18n="filter_police">الشرطة</button>
+    <button class="filter-btn" data-filter="housing" data-i18n="filter_housing">الإسكان</button>
+    <button class="filter-btn" data-filter="ui" data-i18n="filter_ui">واجهات</button>
+    <button class="filter-btn" data-filter="economy" data-i18n="filter_economy">الاقتصاد</button>
+  </div>
+
+  <div class="scripts-grid" id="scripts-grid"></div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section style="background: linear-gradient(135deg, rgba(0,255,135,0.02) 0%, rgba(10,132,255,0.02) 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="section-header reveal">
+    <div class="section-tag" data-i18n="how_tag">كيف يعمل</div>
+    <h2 class="section-title" data-i18n="how_title">كيف نعمل معك؟</h2>
+    <div class="divider-line"></div>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card reveal">
+      <div class="step-num">1</div>
+      <h3 class="step-title" data-i18n="step1_title">اختر السكربت</h3>
+      <p class="step-desc" data-i18n="step1_desc">تصفح مكتبتنا الضخمة واختر السكربت المناسب أو اطلب تطوير مخصص</p>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-num">2</div>
+      <h3 class="step-title" data-i18n="step2_title">أرسل الطلب</h3>
+      <p class="step-desc" data-i18n="step2_desc">أرسل لنا تفاصيل طلبك وسنتواصل معك خلال 24 ساعة</p>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-num">3</div>
+      <h3 class="step-title" data-i18n="step3_title">الدفع الآمن</h3>
+      <p class="step-desc" data-i18n="step3_desc">ادفع بأمان عبر PayPal أو STC Pay مع ضمان استرداد المبلغ</p>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-num">4</div>
+      <h3 class="step-title" data-i18n="step4_title">التسليم والدعم</h3>
+      <p class="step-desc" data-i18n="step4_desc">احصل على سكربتك مع دعم فني كامل وتحديثات مجانية</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CUSTOM ORDER SECTION ===== -->
+<section class="custom-section" id="custom">
+  <div class="custom-container">
+    <div class="custom-info reveal">
+      <div class="section-tag" data-i18n="custom_tag">تطوير مخصص</div>
+      <h2 data-i18n="custom_title">هل لديك فكرة خاصة؟</h2>
+      <p data-i18n="custom_desc">نطور لك أي سكربت حسب متطلبات سيرفرك. فقط أخبرنا بفكرتك وسنحولها إلى حقيقة</p>
+      <div class="custom-features">
+        <div class="custom-feature">
+          <div class="custom-feature-icon">⚡</div>
+          <span data-i18n="custom_f1">تطوير كامل حسب الطلب</span>
+        </div>
+        <div class="custom-feature">
+          <div class="custom-feature-icon">🔗</div>
+          <span data-i18n="custom_f2">متوافق مع جميع الفريمووركات</span>
+        </div>
+        <div class="custom-feature">
+          <div class="custom-feature-icon">✨</div>
+          <span data-i18n="custom_f3">كود نظيف وموثق</span>
+        </div>
+        <div class="custom-feature">
+          <div class="custom-feature-icon">🛡️</div>
+          <span data-i18n="custom_f4">دعم فني مستمر بعد التسليم</span>
+        </div>
+        <div class="custom-feature">
+          <div class="custom-feature-icon">🔄</div>
+          <span data-i18n="custom_f5">تعديلات مجانية لمدة شهر</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card reveal">
+      <h3 class="form-title" data-i18n="form_title">ابدأ طلبك الآن</h3>
+      <form id="custom-form" onsubmit="doCustomOrder(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" data-i18n="form_name">الاسم الكامل</label>
+            <input type="text" class="form-input" id="custom-name" data-i18n-attr="placeholder:form_name" placeholder="الاسم الكامل">
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="form_email">البريد الإلكتروني</label>
+            <input type="email" class="form-input" id="custom-email" data-i18n-attr="placeholder:form_email" placeholder="البريد الإلكتروني">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_discord">معرّف الديسكورد</label>
+          <input type="text" class="form-input" placeholder="username#0000">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" data-i18n="form_type">نوع السكربت</label>
+            <select class="form-select">
+              <option value="" data-i18n="form_type_opt">اختر نوع السكربت...</option>
+              <option>وظيفة جديدة</option>
+              <option>نظام اقتصادي</option>
+              <option>واجهة مستخدم</option>
+              <option>نظام منازل</option>
+              <option>نظام مركبات</option>
+              <option>نظام شرطة</option>
+              <option>أخرى</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="form_budget">الميزانية</label>
+            <select class="form-select">
+              <option value="" data-i18n="form_budget_opt">اختر الميزانية...</option>
+              <option>أقل من 100 ر.س</option>
+              <option>100 - 300 ر.س</option>
+              <option>300 - 600 ر.س</option>
+              <option>600 - 1000 ر.س</option>
+              <option>أكثر من 1000 ر.س</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_framework">الفريمووورك المستخدم</label>
+          <select class="form-select">
+            <option>ESX</option>
+            <option>QBCore</option>
+            <option>VRP</option>
+            <option>Standalone</option>
+            <option>أخرى</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_desc">وصف الفكرة</label>
+          <textarea class="form-textarea" id="custom-desc" rows="4" data-i18n-attr="placeholder:form_desc_ph" placeholder="اشرح لنا فكرتك بالتفصيل..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit" data-i18n="btn_submit">إرسال الطلب 🚀</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT SECTION ===== -->
+<section id="about">
+  <div class="section-header reveal">
+    <div class="section-tag">من نحن</div>
+    <h2 class="section-title">فريق RoodaScripts</h2>
+    <div class="divider-line"></div>
+    <p class="section-desc" style="margin-top:16px">فريق متخصص في تطوير سكربتات FiveM منذ 2020. نجمع بين الإبداع والتقنية لنقدم أفضل تجربة ممكنة</p>
+  </div>
+  <div class="about-grid">
+    <div class="reveal">
+      <h3 style="font-size:1.5rem; font-weight:900; margin-bottom:16px;">لماذا نحن الأفضل؟</h3>
+      <p style="color:var(--text-muted); line-height:1.9; margin-bottom:24px;">
+        نحن فريق متخصص يضم مطورين محترفين في Lua وJavaScript وقواعد البيانات. كل سكربت نطوره يمر بمرحلة اختبار صارمة قبل التسليم لضمان أعلى جودة ممكنة.
+      </p>
+      <p style="color:var(--text-muted); line-height:1.9; margin-bottom:32px;">
+        نفخر بخدمة أكثر من 500 عميل وتشغيل سكربتاتنا على مئات السيرفرات حول العالم العربي. دعمنا الفني لا يتوقف حتى بعد التسليم.
+      </p>
+      <div class="tech-tags">
+        <span class="tech-tag">Lua</span>
+        <span class="tech-tag blue">JavaScript</span>
+        <span class="tech-tag">ESX</span>
+        <span class="tech-tag blue">QBCore</span>
+        <span class="tech-tag">MySQL</span>
+        <span class="tech-tag blue">React</span>
+        <span class="tech-tag">NUI</span>
+        <span class="tech-tag blue">VRP</span>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <div class="about-stat-row">
+        <div class="about-stat-box">
+          <div class="num">+50</div>
+          <div class="lbl">سكربت مطور</div>
+        </div>
+        <div class="about-stat-box">
+          <div class="num">+500</div>
+          <div class="lbl">عميل سعيد</div>
+        </div>
+      </div>
+      <div class="about-stat-row">
+        <div class="about-stat-box">
+          <div class="num">+200</div>
+          <div class="lbl">سيرفر نشط</div>
+        </div>
+        <div class="about-stat-box">
+          <div class="num">5★</div>
+          <div class="lbl">متوسط التقييم</div>
+        </div>
+      </div>
+      <div style="background:var(--bg-card2); border:1px solid var(--border); border-radius:var(--radius); padding:20px; margin-top:4px;">
+        <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px;">رضا العملاء</div>
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
+          <div style="flex:1; background:var(--bg-deep); border-radius:4px; height:8px; overflow:hidden;">
+            <div style="width:97%; height:100%; background:linear-gradient(90deg, var(--primary), var(--secondary)); border-radius:4px;"></div>
+          </div>
+          <span style="font-size:0.85rem; font-weight:700; color:var(--primary); min-width:36px">97%</span>
+        </div>
+        <div style="font-size:0.8rem; color:var(--text-muted);">بناءً على أكثر من 300 تقييم موثق</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAYMENT SECTION ===== -->
+<section class="payment-section" id="payment" style="border-top:1px solid var(--border);">
+  <div class="section-header reveal">
+    <div class="section-tag" data-i18n="payment_tag">طرق الدفع</div>
+    <h2 class="section-title" data-i18n="payment_title">ادفع بأمان وسهولة</h2>
+    <div class="divider-line"></div>
+    <p class="section-desc" style="margin-top:16px" data-i18n="payment_desc">نقبل طرق الدفع الأكثر شيوعاً في المنطقة</p>
+  </div>
+  <div class="payment-methods">
+    <div class="payment-card paypal reveal" onclick="openAuth('login')">
+      <div class="payment-logo">💳</div>
+      <div class="payment-name" data-i18n="paypal_name">PayPal</div>
+      <div class="payment-desc" data-i18n="paypal_desc">الدفع الإلكتروني الأكثر شيوعاً عالمياً</div>
+      <div style="font-size:2.5rem; margin-bottom:12px; font-weight:900; color:#0070ba;">PayPal</div>
+      <span class="payment-badge badge-secure" data-i18n="paypal_badge">دفع آمن عالمي</span>
+    </div>
+    <div class="payment-card stc reveal" onclick="openAuth('login')">
+      <div class="payment-logo">📱</div>
+      <div class="payment-name" data-i18n="stc_name">STC Pay</div>
+      <div class="payment-desc" data-i18n="stc_desc">الدفع الإلكتروني السعودي الأسرع</div>
+      <div style="font-size:2.5rem; margin-bottom:12px; font-weight:900; color:#7ed321;">STC Pay</div>
+      <span class="payment-badge badge-local" data-i18n="stc_badge">خدمة سعودية محلية</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section style="border-top:1px solid var(--border);" id="reviews">
+  <div class="section-header reveal">
+    <div class="section-tag" data-i18n="reviews_tag">آراء العملاء</div>
+    <h2 class="section-title" data-i18n="reviews_title">ماذا يقول عملاؤنا</h2>
+    <div class="divider-line"></div>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"أفضل سكربتات جربتها لـ FiveM! كود نظيف وأداء رائع. الدعم الفني ممتاز وسريع الاستجابة. أنصح كل أحد بها"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">أ</div>
+        <div>
+          <div class="author-name">أحمد الشمري</div>
+          <div class="author-server">مالك سيرفر KSA Roleplay</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"طلبت سكربت مخصص وتم تسليمه بالوقت المحدد مع كل الميزات المطلوبة. جودة عالية وسعر مناسب. شكراً RoodaScripts"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">م</div>
+        <div>
+          <div class="author-name">محمد العتيبي</div>
+          <div class="author-server">مطور سيرفر Gulf City RP</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"استخدمنا نظام المنازل ونظام الوظائف من RoodaScripts. التحديثات المجانية والدعم المستمر يجعلهم الأفضل في السوق"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">ف</div>
+        <div>
+          <div class="author-name">فيصل القحطاني</div>
+          <div class="author-server">مدير سيرفر Arabian RP</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★☆</div>
+      <p class="testimonial-text">"نظام MDT الشرطة غيّر تجربة فريق الشرطة عندنا بالكامل. واجهة احترافية وسهل الاستخدام. بالتوفيق للفريق"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">خ</div>
+        <div>
+          <div class="author-name">خالد الدوسري</div>
+          <div class="author-server">قائد شرطة Desert Storm RP</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"الدفع سهل عبر STC Pay والتسليم كان فوري. السكربت شغال بدون أي مشاكل من أول تثبيت. خدمة ممتازة جداً"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">ع</div>
+        <div>
+          <div class="author-name">عبدالله المالكي</div>
+          <div class="author-server">مالك سيرفر Riyadh Life</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"أسعار معقولة مقارنة بالجودة العالية. شرحوا لي كيفية تثبيت السكربت خطوة بخطوة. فريق محترف وودود"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">ب</div>
+        <div>
+          <div class="author-name">بندر الرشيدي</div>
+          <div class="author-server">مطور مستقل</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ SECTION ===== -->
+<section id="faq" style="background: linear-gradient(135deg, rgba(0,255,135,0.02) 0%, transparent 100%); border-top:1px solid var(--border);">
+  <div class="section-header reveal">
+    <div class="section-tag" data-i18n="faq_tag">الأسئلة الشائعة</div>
+    <h2 class="section-title" data-i18n="faq_title">هل لديك استفسار؟</h2>
+    <div class="divider-line"></div>
+  </div>
+  <div class="faq-container">
+    <div class="faq-item reveal">
+      <div class="faq-question">
+        <span data-i18n="faq1_q">كيف أحصل على السكربت بعد الشراء؟</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer" data-i18n="faq1_a">بعد إتمام عملية الدفع، ستصلك رسالة فورية على بريدك الإلكتروني تحتوي على رابط تحميل السكربت مع تعليمات التثبيت الكاملة.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-question">
+        <span data-i18n="faq2_q">هل السكربتات متوافقة مع ESX و QBCore؟</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer" data-i18n="faq2_a">نعم! جميع سكربتاتنا متوافقة مع أشهر الفريمووركات مثل ESX و QBCore و VRP.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-question">
+        <span data-i18n="faq3_q">هل يوجد ضمان على السكربتات؟</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer" data-i18n="faq3_a">نعم، نقدم ضمان 30 يوماً على جميع السكربتات.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-question">
+        <span data-i18n="faq4_q">كم يستغرق تطوير السكربت المخصص؟</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer" data-i18n="faq4_a">يختلف الوقت حسب تعقيد السكربت. السكربتات البسيطة 2-3 أيام، والمعقدة من أسبوع إلى أسبوعين.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-question">
+        <span data-i18n="faq5_q">هل تقدمون دعماً فنياً بعد الشراء؟</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer" data-i18n="faq5_a">بالطبع! نقدم دعم فني مجاني لمدة 6 أشهر بعد الشراء.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT SECTION ===== -->
+<section id="contact" style="border-top:1px solid var(--border);">
+  <div class="section-header reveal">
+    <div class="section-tag">تواصل معنا</div>
+    <h2 class="section-title">نحن هنا لمساعدتك</h2>
+    <div class="divider-line"></div>
+    <p class="section-desc" style="margin-top:16px">تواصل معنا عبر أي من القنوات التالية وسنرد عليك في أقرب وقت</p>
+  </div>
+  <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:24px; max-width:900px; margin:0 auto;">
+    <div class="step-card reveal" style="cursor:default;">
+      <div style="font-size:2.5rem; margin-bottom:12px;">💬</div>
+      <h3 class="step-title">Discord</h3>
+      <p class="step-desc">تواصل معنا عبر الديسكورد للدعم الفوري وأسرع رد</p>
+      <a href="#" style="display:inline-block; margin-top:12px; padding:8px 20px; border-radius:8px; background:rgba(88,101,242,0.15); border:1px solid rgba(88,101,242,0.3); color:#5865f2; font-weight:700; text-decoration:none; font-size:0.85rem;">انضم للسيرفر</a>
+    </div>
+    <div class="step-card reveal" style="cursor:default;">
+      <div style="font-size:2.5rem; margin-bottom:12px;">📧</div>
+      <h3 class="step-title">البريد الإلكتروني</h3>
+      <p class="step-desc">أرسل لنا بريدك وسنرد خلال 24 ساعة</p>
+      <a href="mailto:roodakamr@gmail.com" style="display:inline-block; margin-top:12px; padding:8px 20px; border-radius:8px; background:rgba(0,255,135,0.08); border:1px solid rgba(0,255,135,0.2); color:var(--primary); font-weight:700; text-decoration:none; font-size:0.85rem;">roodakamr@gmail.com</a>
+    </div>
+    <div class="step-card reveal" style="cursor:default;">
+      <div style="font-size:2.5rem; margin-bottom:12px;">📱</div>
+      <h3 class="step-title">تيليغرام</h3>
+      <p class="step-desc">تابعنا على تيليغرام للحصول على آخر الأخبار والعروض</p>
+      <a href="#" style="display:inline-block; margin-top:12px; padding:8px 20px; border-radius:8px; background:rgba(0,136,204,0.12); border:1px solid rgba(0,136,204,0.3); color:#0088cc; font-weight:700; text-decoration:none; font-size:0.85rem;">@RoodaScripts</a>
+    </div>
+    <div class="step-card reveal" style="cursor:default;">
+      <div style="font-size:2.5rem; margin-bottom:12px;">🐦</div>
+      <h3 class="step-title">تويتر X</h3>
+      <p class="step-desc">تابعنا على تويتر للأخبار التقنية والعروض الحصرية</p>
+      <a href="#" style="display:inline-block; margin-top:12px; padding:8px 20px; border-radius:8px; background:rgba(29,161,242,0.1); border:1px solid rgba(29,161,242,0.3); color:#1da1f2; font-weight:700; text-decoration:none; font-size:0.85rem;">@RoodaScripts</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>RoodaScripts</h3>
+      <p data-i18n="footer_desc">أفضل مزود لسكربتات FiveM في المنطقة العربية. نطور سكربتات احترافية وحلول مخصصة لسيرفرك.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" title="Discord">💬</a>
+        <a href="#" class="social-link" title="Twitter">🐦</a>
+        <a href="#" class="social-link" title="Telegram">📱</a>
+        <a href="mailto:roodakamr@gmail.com" class="social-link" title="Email">📧</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_quick">روابط سريعة</h4>
+      <ul class="footer-links">
+        <li><a href="#home" data-i18n="nav_home">الرئيسية</a></li>
+        <li><a href="#scripts" data-i18n="nav_scripts">السكربتات</a></li>
+        <li><a href="#custom" data-i18n="nav_custom">طلب مخصص</a></li>
+        <li><a href="#about" data-i18n="nav_about">من نحن</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_support">الدعم</h4>
+      <ul class="footer-links">
+        <li><a href="#faq">الأسئلة الشائعة</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+        <li><a href="#">دليل التثبيت</a></li>
+        <li><a href="#">سياسة الاسترداد</a></li>
+      </ul>
+    </div>
+    <div class="footer-newsletter">
+      <h4 data-i18n="footer_newsletter">النشرة البريدية</h4>
+      <p data-i18n="footer_newsletter_desc">احصل على آخر أخبار السكربتات والعروض الحصرية</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" class="newsletter-input" data-i18n-attr="placeholder:footer_newsletter_ph" placeholder="بريدك الإلكتروني">
+        <button type="submit" class="btn-newsletter" data-i18n="footer_sub">اشتراك</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2024 <span>RoodaScripts</span>. <span data-i18n="footer_copy">جميع الحقوق محفوظة</span></div>
+    <div class="footer-legal">
+      <a href="#" data-i18n="footer_privacy">سياسة الخصوصية</a>
+      <a href="#" data-i18n="footer_terms">الشروط والأحكام</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== SCRIPT DETAIL MODAL ===== -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="script-modal">
+    <div class="modal-close">
+      <button class="btn-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-slider" id="modal-slider"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-cat" id="modal-cat"></div>
+        <h2 class="modal-title" id="modal-title"></h2>
+        <p class="modal-desc" id="modal-desc"></p>
+      </div>
+      <div class="modal-features">
+        <h4 id="modal-features-title">المميزات</h4>
+        <div class="modal-features-list" id="modal-features-list"></div>
+      </div>
+      <div class="modal-footer">
+        <div class="modal-price" id="modal-price"></div>
+        <div class="modal-actions">
+          <button class="btn-buy" id="modal-btn-buy" onclick="currentModalScript && openCheckout(currentModalScript.id)">شراء الآن</button>
+          <button class="btn-custom-order" id="modal-btn-custom" onclick="closeModal(); document.getElementById('custom').scrollIntoView({behavior:'smooth'})">طلب تعديل</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CHECKOUT MODAL ===== -->
+<div class="checkout-overlay" id="checkout-overlay">
+  <div class="checkout-modal">
+    <h2 class="checkout-title" id="checkout-title">إتمام الشراء</h2>
+    <p class="checkout-subtitle" id="checkout-subtitle">اختر طريقة الدفع المناسبة</p>
+    <div class="checkout-item">
+      <span id="checkout-name">-</span>
+      <span id="checkout-base">-</span>
+    </div>
+    <div class="checkout-item">
+      <span id="checkout-label-tax">الضريبة 15%</span>
+      <span id="checkout-tax">-</span>
+    </div>
+    <div class="checkout-total">
+      <span id="checkout-label-total">الإجمالي</span>
+      <span class="amount" id="checkout-total-amt">-</span>
+    </div>
+    <div class="checkout-methods">
+      <button class="checkout-method-btn paypal" id="checkout-btn-paypal" onclick="payWith('paypal')">💳 الدفع عبر PayPal</button>
+      <button class="checkout-method-btn stc" id="checkout-btn-stc" onclick="payWith('stc')">📱 الدفع عبر STC Pay</button>
+      <button class="checkout-cancel" id="checkout-cancel" onclick="closeCheckout()">إلغاء</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== AUTH MODAL ===== -->
+<div class="auth-overlay" id="auth-overlay">
+  <div class="auth-modal">
+    <button class="btn-close" style="position:absolute; top:16px; left:16px;" onclick="closeAuth()">✕</button>
+    <div class="auth-logo">
+      <svg width="56" height="56" viewBox="0 0 40 40" fill="none">
+        <rect width="40" height="40" rx="10" fill="url(#authLogoGrad)"/>
+        <path d="M8 20L14 12L20 16L26 8L32 20" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="20" cy="28" r="4" fill="white" opacity="0.9"/>
+        <defs>
+          <linearGradient id="authLogoGrad" x1="0" y1="0" x2="40" y2="40">
+            <stop stop-color="#00ff87"/><stop offset="1" stop-color="#0a84ff"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <h2 class="auth-title" id="auth-title" data-i18n="auth_login_title">مرحباً بعودتك</h2>
+    <p class="auth-subtitle" id="auth-subtitle" data-i18n="auth_login_sub">سجّل دخولك للوصول إلى حسابك</p>
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-tab="login" data-i18n="tab_login">تسجيل الدخول</button>
+      <button class="auth-tab" data-tab="register" data-i18n="tab_register">حساب جديد</button>
+    </div>
+
+    <!-- Login Form -->
+    <form class="auth-form active" id="form-login">
+      <button type="button" class="btn-google">
+        <span style="font-size:1.1rem">G</span> <span data-i18n="btn_google">المتابعة مع Google</span>
+      </button>
+      <div class="divider"><span data-i18n="or_login_with">أو</span></div>
+      <div class="form-group">
+        <label class="form-label" data-i18n="form_email">البريد الإلكتروني</label>
+        <input type="email" class="form-input" id="login-email" data-i18n-attr="placeholder:form_email" placeholder="البريد الإلكتروني">
+      </div>
+      <div class="form-group">
+        <label class="form-label" data-i18n="form_password">كلمة المرور</label>
+        <input type="password" class="form-input" id="login-pass" data-i18n-attr="placeholder:form_password" placeholder="كلمة المرور">
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+        <label class="form-check" style="margin:0">
+          <input type="checkbox"> <span data-i18n="remember_me">تذكرني</span>
+        </label>
+        <a href="#" style="font-size:0.85rem; color:var(--primary); text-decoration:none;" data-i18n="forgot_pass">نسيت كلمة المرور؟</a>
+      </div>
+      <button type="submit" class="btn-submit" data-i18n="btn_login">تسجيل الدخول</button>
+    </form>
+
+    <!-- Register Form -->
+    <form class="auth-form" id="form-register">
+      <button type="button" class="btn-google">
+        <span style="font-size:1.1rem">G</span> <span data-i18n="btn_google">المتابعة مع Google</span>
+      </button>
+      <div class="divider"><span data-i18n="or_login_with">أو</span></div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_name">الاسم</label>
+          <input type="text" class="form-input" id="reg-name" placeholder="الاسم الكامل">
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_phone">الجوال</label>
+          <input type="tel" class="form-input" placeholder="+966">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" data-i18n="form_email">البريد الإلكتروني</label>
+        <input type="email" class="form-input" id="reg-email" placeholder="example@email.com">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_password">كلمة المرور</label>
+          <input type="password" class="form-input" id="reg-pass" placeholder="••••••••">
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_confirm_pass">تأكيد كلمة المرور</label>
+          <input type="password" class="form-input" placeholder="••••••••">
+        </div>
+      </div>
+      <label class="form-check">
+        <input type="checkbox"> <span data-i18n="agree_terms">أوافق على الشروط والأحكام</span>
+      </label>
+      <button type="submit" class="btn-submit" data-i18n="btn_register">إنشاء الحساب</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== TOAST CONTAINER ===== -->
+<div class="toast-container" id="toast-container"></div>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scroll-top" title="العودة للأعلى">↑</button>
+
+<!-- Scripts -->
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
