@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#050810"/>
+      <stop offset="100%" style="stop-color:#0a1220"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0a84ff"/>
+      <stop offset="100%" style="stop-color:#0060cc"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="700" cy="80" r="120" fill="#0a84ff08"/>
+  <circle cx="100" cy="380" r="80" fill="#00ff8705"/>
+
+  <!-- Main shop header -->
+  <rect x="0" y="0" width="800" height="70" fill="#0d0d1a"/>
+  <text x="40" y="45" font-family="Arial" font-size="22" font-weight="bold" fill="#ffffff">🚗 VehicleX</text>
+  <text x="160" y="45" font-family="Arial" font-size="14" fill="#888899">معرض السيارات</text>
+
+  <!-- Category tabs -->
+  <rect x="380" y="18" width="90" height="34" rx="8" fill="#0a84ff"/>
+  <text x="400" y="40" font-family="Arial" font-size="12" font-weight="bold" fill="#fff">سيارات</text>
+  <rect x="478" y="18" width="90" height="34" rx="8" fill="#1a1a2e"/>
+  <text x="498" y="40" font-family="Arial" font-size="12" fill="#888">دراجات</text>
+  <rect x="576" y="18" width="90" height="34" rx="8" fill="#1a1a2e"/>
+  <text x="590" y="40" font-family="Arial" font-size="12" fill="#888">شاحنات</text>
+  <rect x="674" y="18" width="90" height="34" rx="8" fill="#1a1a2e"/>
+  <text x="690" y="40" font-family="Arial" font-size="12" fill="#888">عسكري</text>
+
+  <!-- Car preview area -->
+  <rect x="30" y="85" width="440" height="260" rx="16" fill="#12121e" stroke="#0a84ff25" stroke-width="1.5"/>
+
+  <!-- Car silhouette (simplified) -->
+  <g transform="translate(240, 215) scale(1.8)">
+    <!-- Car body -->
+    <ellipse cx="0" cy="10" rx="85" ry="18" fill="#0d0d1a"/>
+    <rect x="-85" y="-8" width="170" height="22" rx="8" fill="#1e2a3e"/>
+    <rect x="-60" y="-28" width="120" height="24" rx="8" fill="#253040"/>
+    <!-- Windows -->
+    <rect x="-52" y="-26" width="48" height="18" rx="4" fill="#0a84ff30"/>
+    <rect x="4" y="-26" width="48" height="18" rx="4" fill="#0a84ff30"/>
+    <!-- Wheels -->
+    <circle cx="-55" cy="14" r="14" fill="#111"/>
+    <circle cx="-55" cy="14" r="9" fill="#222"/>
+    <circle cx="-55" cy="14" r="4" fill="#0a84ff" opacity="0.6"/>
+    <circle cx="55" cy="14" r="14" fill="#111"/>
+    <circle cx="55" cy="14" r="9" fill="#222"/>
+    <circle cx="55" cy="14" r="4" fill="#0a84ff" opacity="0.6"/>
+    <!-- Lights -->
+    <rect x="-86" y="-4" width="12" height="8" rx="2" fill="#0a84ff" opacity="0.8"/>
+    <rect x="74" y="-4" width="12" height="8" rx="2" fill="#ff4040" opacity="0.7"/>
+  </g>
+
+  <!-- Car name -->
+  <text x="250" y="115" font-family="Arial" font-size="20" font-weight="bold" fill="#fff" text-anchor="middle">Vapid Dominator GTT</text>
+  <text x="250" y="135" font-family="Arial" font-size="13" fill="#0a84ff" text-anchor="middle">⭐ Premium Sport</text>
+
+  <!-- Specs bar -->
+  <rect x="60" y="320" width="380" height="8" rx="4" fill="#1a1a2e"/>
+  <!-- Speed -->
+  <text x="60" y="315" font-family="Arial" font-size="10" fill="#888899">السرعة</text>
+  <rect x="60" y="320" width="280" height="8" rx="4" fill="#0a84ff"/>
+  <text x="350" y="328" font-family="Arial" font-size="10" fill="#0a84ff">320 km/h</text>
+
+  <!-- Navigation dots -->
+  <circle cx="200" cy="358" r="5" fill="#0a84ff"/>
+  <circle cx="215" cy="358" r="3.5" fill="#333"/>
+  <circle cx="228" cy="358" r="3.5" fill="#333"/>
+  <circle cx="241" cy="358" r="3.5" fill="#333"/>
+  <circle cx="254" cy="358" r="3.5" fill="#333"/>
+
+  <!-- Arrow buttons -->
+  <rect x="50" y="195" width="36" height="36" rx="18" fill="#1a1a2e" stroke="#0a84ff40" stroke-width="1"/>
+  <text x="62" y="219" font-family="Arial" font-size="16" fill="#0a84ff">‹</text>
+  <rect x="390" y="195" width="36" height="36" rx="18" fill="#1a1a2e" stroke="#0a84ff40" stroke-width="1"/>
+  <text x="402" y="219" font-family="Arial" font-size="16" fill="#0a84ff">›</text>
+
+  <!-- Right side - Details Panel -->
+  <rect x="490" y="85" width="280" height="360" rx="16" fill="#12121e" stroke="#0a84ff25" stroke-width="1.5"/>
+
+  <!-- Price -->
+  <rect x="510" y="105" width="240" height="65" rx="10" fill="#1a1a2e"/>
+  <text x="525" y="128" font-family="Arial" font-size="12" fill="#888899">السعر</text>
+  <text x="525" y="155" font-family="Arial" font-size="26" font-weight="bold" fill="#00ff87" filter="url(#glow)">$285,000</text>
+
+  <!-- Stats -->
+  <text x="525" y="195" font-family="Arial" font-size="12" font-weight="bold" fill="#888899">المواصفات</text>
+
+  <!-- Speed stat -->
+  <text x="525" y="220" font-family="Arial" font-size="11" fill="#e8e8f0">⚡ السرعة</text>
+  <rect x="525" y="226" width="200" height="6" rx="3" fill="#1f2033"/>
+  <rect x="525" y="226" width="175" height="6" rx="3" fill="#0a84ff"/>
+  <text x="730" y="233" font-family="Arial" font-size="10" fill="#0a84ff">87</text>
+
+  <!-- Acceleration -->
+  <text x="525" y="253" font-family="Arial" font-size="11" fill="#e8e8f0">🚀 التسارع</text>
+  <rect x="525" y="259" width="200" height="6" rx="3" fill="#1f2033"/>
+  <rect x="525" y="259" width="160" height="6" rx="3" fill="#00ff87"/>
+  <text x="730" y="266" font-family="Arial" font-size="10" fill="#00ff87">80</text>
+
+  <!-- Handling -->
+  <text x="525" y="286" font-family="Arial" font-size="11" fill="#e8e8f0">🎯 التحكم</text>
+  <rect x="525" y="292" width="200" height="6" rx="3" fill="#1f2033"/>
+  <rect x="525" y="292" width="140" height="6" rx="3" fill="#ffd700"/>
+  <text x="730" y="299" font-family="Arial" font-size="10" fill="#ffd700">70</text>
+
+  <!-- Braking -->
+  <text x="525" y="319" font-family="Arial" font-size="11" fill="#e8e8f0">🛑 الفرملة</text>
+  <rect x="525" y="325" width="200" height="6" rx="3" fill="#1f2033"/>
+  <rect x="525" y="325" width="150" height="6" rx="3" fill="#ff3860"/>
+  <text x="730" y="332" font-family="Arial" font-size="10" fill="#ff3860">75</text>
+
+  <!-- Colors -->
+  <text x="525" y="358" font-family="Arial" font-size="12" font-weight="bold" fill="#888899">الألوان</text>
+  <circle cx="545" cy="378" r="10" fill="#ff3860"/>
+  <circle cx="565" cy="378" r="10" fill="#0a84ff"/>
+  <circle cx="585" cy="378" r="10" fill="#00ff87" stroke="#00ff87" stroke-width="2"/>
+  <circle cx="605" cy="378" r="10" fill="#ffd700"/>
+  <circle cx="625" cy="378" r="10" fill="#ffffff"/>
+  <circle cx="645" cy="378" r="10" fill="#333"/>
+
+  <!-- Buy button -->
+  <rect x="510" y="400" width="240" height="36" rx="10" fill="url(#blue)"/>
+  <text x="630" y="422" font-family="Arial" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">شراء السيارة 🚗</text>
+
+  <text x="400" y="440" font-family="Arial" font-size="11" fill="#ffffff15" text-anchor="middle">RoodaScripts • محل السيارات المخصص</text>
+</svg>

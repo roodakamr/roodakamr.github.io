@@ -17,9 +17,9 @@ const scripts = [
     features_ar: ['أكثر من 50 وظيفة', 'نظام ترقيات', 'مكافآت يومية', 'متوافق ESX/QBCore', 'واجهة مميزة', 'لوحة إدارة'],
     features_en: ['50+ Jobs', 'Promotion System', 'Daily Rewards', 'ESX/QBCore Compatible', 'Custom UI', 'Admin Panel'],
     images: [
-      'https://i.imgur.com/JKL1234.jpg',
-      'https://i.imgur.com/ABC5678.jpg',
-      'https://i.imgur.com/XYZ9012.jpg',
+      'images/jobs.svg',
+      'images/hud.svg',
+      'images/delivery.svg',
     ],
     color: '#00ff87',
     emoji: '💼'
@@ -41,8 +41,8 @@ const scripts = [
     features_ar: ['عرض ثلاثي الأبعاد', 'نظام تمويل', 'تخصيص كامل', 'فئات متعددة', 'متوافق VORP', 'إدارة المخزون'],
     features_en: ['3D Preview', 'Finance System', 'Full Customization', 'Multiple Categories', 'VORP Compatible', 'Inventory Management'],
     images: [
-      'https://i.imgur.com/VEH1234.jpg',
-      'https://i.imgur.com/VEH5678.jpg',
+      'images/vehicles.svg',
+      'images/hud.svg',
     ],
     color: '#0a84ff',
     emoji: '🚗'
@@ -64,9 +64,9 @@ const scripts = [
     features_ar: ['زراعة ومعالجة', 'سوق سوداء', 'شرطة ذكاء اصطناعي', '+10 أنواع', 'مناطق حصرية', 'نظام مخاطر'],
     features_en: ['Plant & Process', 'Black Market', 'AI Police', '10+ Types', 'Exclusive Zones', 'Risk System'],
     images: [
-      'https://i.imgur.com/DRG1234.jpg',
-      'https://i.imgur.com/DRG5678.jpg',
-      'https://i.imgur.com/DRG9012.jpg',
+      'images/drugs.svg',
+      'images/economy.svg',
+      'images/police.svg',
     ],
     color: '#ff3860',
     emoji: '💊'
@@ -88,8 +88,8 @@ const scripts = [
     features_ar: ['شراء وإيجار', 'تأثيث كامل', 'نظام قفل', '+100 منزل', 'ضيافة الأصدقاء', 'إدارة الملكية'],
     features_en: ['Buy & Rent', 'Full Furnishing', 'Lock System', '100+ Homes', 'Guest System', 'Property Management'],
     images: [
-      'https://i.imgur.com/HSE1234.jpg',
-      'https://i.imgur.com/HSE5678.jpg',
+      'images/housing.svg',
+      'images/economy.svg',
     ],
     color: '#ffd700',
     emoji: '🏠'
@@ -111,8 +111,8 @@ const scripts = [
     features_ar: ['قاعدة بيانات', 'تتبع السيارات', 'إدارة المكالمات', 'بطاقات هوية', 'سجل الجرائم', 'واجهة عصرية'],
     features_en: ['Criminal Database', 'Vehicle Tracking', 'Call Management', 'ID Cards', 'Crime History', 'Modern UI'],
     images: [
-      'https://i.imgur.com/MDT1234.jpg',
-      'https://i.imgur.com/MDT5678.jpg',
+      'images/police.svg',
+      'images/prison.svg',
     ],
     color: '#0a84ff',
     emoji: '🚔'
@@ -134,8 +134,8 @@ const scripts = [
     features_ar: ['قابل للتخصيص', 'متعدد الثيمات', 'مؤشرات كاملة', 'خفيف الأداء', 'دعم الموبايل', 'تحديثات مستمرة'],
     features_en: ['Fully Customizable', 'Multiple Themes', 'Full Indicators', 'Performance Friendly', 'Mobile Support', 'Continuous Updates'],
     images: [
-      'https://i.imgur.com/HUD1234.jpg',
-      'https://i.imgur.com/HUD5678.jpg',
+      'images/hud.svg',
+      'images/vehicles.svg',
     ],
     color: '#00ff87',
     emoji: '🎮'
@@ -155,7 +155,8 @@ const scripts = [
     features_ar: ['نظام بنكي', 'محافظ رقمية', 'تحويلات مالية', 'نظام قروض', 'بطاقات ائتمان', 'عملات متعددة'],
     features_en: ['Banking System', 'Digital Wallets', 'Money Transfers', 'Loan System', 'Credit Cards', 'Multiple Currencies'],
     images: [
-      'https://i.imgur.com/BNK1234.jpg',
+      'images/economy.svg',
+      'images/jobs.svg',
     ],
     color: '#ffd700',
     emoji: '💰'
@@ -177,7 +178,8 @@ const scripts = [
     features_ar: ['مهام عشوائية', 'خرائط تفاعلية', 'مكافآت متدرجة', 'عدة مركبات', 'نظام تقييم', 'لوحة صدارة'],
     features_en: ['Random Missions', 'Interactive Maps', 'Tiered Rewards', 'Multiple Vehicles', 'Rating System', 'Leaderboard'],
     images: [
-      'https://i.imgur.com/DLV1234.jpg',
+      'images/delivery.svg',
+      'images/hud.svg',
     ],
     color: '#0a84ff',
     emoji: '📦'
@@ -197,7 +199,8 @@ const scripts = [
     features_ar: ['أنشطة داخل السجن', 'نظام هروب', 'تقليل الوقت', 'إدارة سجناء', 'أنظمة أمن', 'تكامل شرطة'],
     features_en: ['In-Prison Activities', 'Escape System', 'Time Reduction', 'Inmate Management', 'Security Systems', 'Police Integration'],
     images: [
-      'https://i.imgur.com/PRS1234.jpg',
+      'images/prison.svg',
+      'images/police.svg',
     ],
     color: '#ff3860',
     emoji: '⛓️'

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#080810"/>
+      <stop offset="100%" style="stop-color:#0a0a18"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9b59b6"/>
+      <stop offset="100%" style="stop-color:#6c3483"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect x="0" y="0" width="800" height="58" fill="#0a0810"/>
+
+  <!-- Header -->
+  <text x="35" y="38" font-family="Arial" font-size="18" font-weight="bold" fill="#9b59b6" filter="url(#glow)">🧪 نظام المختبر السري</text>
+  <rect x="620" y="14" width="160" height="30" rx="8" fill="#9b59b615" stroke="#9b59b640" stroke-width="1"/>
+  <circle cx="637" cy="29" r="5" fill="#00ff87"/>
+  <text x="648" y="34" font-family="Arial" font-size="11" fill="#00ff87">المختبر: نشط ✓</text>
+
+  <!-- Left - Crafting panel -->
+  <rect x="20" y="70" width="220" height="365" rx="12" fill="#0d0d1a" stroke="#9b59b620" stroke-width="1"/>
+  <text x="35" y="97" font-family="Arial" font-size="13" font-weight="bold" fill="#e8e8f0">⚗️ التصنيع</text>
+
+  <!-- Recipe list -->
+  <rect x="30" y="108" width="200" height="52" rx="8" fill="#9b59b615" stroke="#9b59b640" stroke-width="2"/>
+  <text x="45" y="128" font-family="Arial" font-size="13" font-weight="bold" fill="#9b59b6">Crystal Meth</text>
+  <text x="45" y="146" font-family="Arial" font-size="10" fill="#888899">ربح: $3,200 للوحدة</text>
+  <rect x="186" y="117" width="35" height="16" rx="4" fill="#9b59b630"/>
+  <text x="191" y="129" font-family="Arial" font-size="9" fill="#9b59b6">مختار</text>
+
+  <rect x="30" y="166" width="200" height="52" rx="8" fill="#12121e" stroke="#ffffff10" stroke-width="1"/>
+  <text x="45" y="186" font-family="Arial" font-size="13" font-weight="bold" fill="#e8e8f0">Cocaine</text>
+  <text x="45" y="204" font-family="Arial" font-size="10" fill="#888899">ربح: $5,800 للوحدة</text>
+
+  <rect x="30" y="224" width="200" height="52" rx="8" fill="#12121e" stroke="#ffffff10" stroke-width="1"/>
+  <text x="45" y="244" font-family="Arial" font-size="13" font-weight="bold" fill="#e8e8f0">Heroin</text>
+  <text x="45" y="262" font-family="Arial" font-size="10" fill="#888899">ربح: $7,200 للوحدة</text>
+
+  <rect x="30" y="282" width="200" height="52" rx="8" fill="#12121e" stroke="#ffffff10" stroke-width="1"/>
+  <text x="45" y="302" font-family="Arial" font-size="13" font-weight="bold" fill="#e8e8f0">Weed</text>
+  <text x="45" y="320" font-family="Arial" font-size="10" fill="#888899">ربح: $1,100 للوحدة</text>
+
+  <!-- Manufacture button -->
+  <rect x="30" y="362" width="200" height="38" rx="10" fill="url(#purple)"/>
+  <text x="130" y="385" font-family="Arial" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">ابدأ التصنيع ⚗️</text>
+
+  <!-- Center - Lab visual -->
+  <rect x="254" y="70" width="300" height="260" rx="12" fill="#0d0d1a" stroke="#9b59b620" stroke-width="1"/>
+  <text x="404" y="98" font-family="Arial" font-size="13" font-weight="bold" fill="#e8e8f0" text-anchor="middle">🔬 المختبر المباشر</text>
+
+  <!-- Lab equipment illustration -->
+  <g transform="translate(404, 200)">
+    <!-- Table -->
+    <rect x="-130" y="40" width="260" height="8" rx="4" fill="#1a1a2e"/>
+    <!-- Flask left -->
+    <rect x="-100" y="-10" width="30" height="50" rx="4" fill="#9b59b620" stroke="#9b59b640" stroke-width="1"/>
+    <ellipse cx="-85" cy="8" rx="20" ry="10" fill="#9b59b630"/>
+    <circle cx="-85" cy="-5" r="8" fill="#9b59b640"/>
+    <!-- Bubbles -->
+    <circle cx="-90" cy="-2" r="3" fill="#9b59b660"/>
+    <circle cx="-80" cy="-8" r="2" fill="#9b59b650"/>
+    <!-- Beaker center -->
+    <rect x="-25" y="-30" width="50" height="70" rx="6" fill="#9b59b615" stroke="#9b59b650" stroke-width="1.5"/>
+    <rect x="-20" y="-5" width="40" height="40" rx="4" fill="#9b59b625"/>
+    <text x="0" y="20" font-family="Arial" font-size="22" text-anchor="middle" filter="url(#glow)">🧪</text>
+    <!-- Pipe -->
+    <line x1="25" y1="-10" x2="65" y2="-10" stroke="#9b59b640" stroke-width="3"/>
+    <line x1="65" y1="-10" x2="65" y2="20" stroke="#9b59b640" stroke-width="3"/>
+    <!-- Flask right -->
+    <rect x="70" y="5" width="40" height="35" rx="5" fill="#00ff8720" stroke="#00ff8740" stroke-width="1"/>
+    <rect x="73" y="22" width="34" height="18" rx="3" fill="#00ff8730"/>
+  </g>
+
+  <!-- Progress -->
+  <text x="274" y="300" font-family="Arial" font-size="11" fill="#888899">التقدم: 67%</text>
+  <rect x="274" y="308" width="260" height="10" rx="5" fill="#1a1a2e"/>
+  <rect x="274" y="308" width="174" height="10" rx="5" fill="#9b59b6" filter="url(#glow)"/>
+
+  <text x="274" y="332" font-family="Arial" font-size="11" fill="#888899">الوقت المتبقي: 8 دقائق</text>
+  <text x="404" y="320" font-family="Arial" font-size="10" fill="#9b59b6" text-anchor="middle">⏳</text>
+
+  <!-- Center bottom - inventory -->
+  <rect x="254" y="340" width="300" height="95" rx="12" fill="#0d0d1a" stroke="#9b59b620" stroke-width="1"/>
+  <text x="270" y="363" font-family="Arial" font-size="12" font-weight="bold" fill="#888899">المخزون الحالي</text>
+
+  <rect x="265" y="372" width="80" height="48" rx="8" fill="#9b59b615" stroke="#9b59b630" stroke-width="1"/>
+  <text x="305" y="392" font-family="Arial" font-size="18" text-anchor="middle">🧊</text>
+  <text x="305" y="410" font-family="Arial" font-size="10" fill="#9b59b6" text-anchor="middle">14 وحدة</text>
+
+  <rect x="353" y="372" width="80" height="48" rx="8" fill="#00ff8715" stroke="#00ff8730" stroke-width="1"/>
+  <text x="393" y="392" font-family="Arial" font-size="18" text-anchor="middle">🌿</text>
+  <text x="393" y="410" font-family="Arial" font-size="10" fill="#00ff87" text-anchor="middle">32 وحدة</text>
+
+  <rect x="441" y="372" width="80" height="48" rx="8" fill="#ffd70015" stroke="#ffd70030" stroke-width="1"/>
+  <text x="481" y="392" font-family="Arial" font-size="18" text-anchor="middle">💊</text>
+  <text x="481" y="410" font-family="Arial" font-size="10" fill="#ffd700" text-anchor="middle">7 وحدة</text>
+
+  <!-- Right - Market -->
+  <rect x="568" y="70" width="212" height="365" rx="12" fill="#0d0d1a" stroke="#9b59b620" stroke-width="1"/>
+  <text x="583" y="97" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">📈 السوق السوداء</text>
+
+  <!-- Buyers list -->
+  <rect x="578" y="108" width="192" height="55" rx="8" fill="#00ff8710" stroke="#00ff8720" stroke-width="1"/>
+  <text x="594" y="128" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">المشتري: الشارع</text>
+  <text x="594" y="146" font-family="Arial" font-size="11" fill="#00ff87">$3,200 / وحدة</text>
+  <text x="594" y="157" font-family="Arial" font-size="9" fill="#888">يطلب: 10 وحدات</text>
+
+  <rect x="578" y="169" width="192" height="55" rx="8" fill="#9b59b610" stroke="#9b59b620" stroke-width="1"/>
+  <text x="594" y="189" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">المشتري: الموانئ</text>
+  <text x="594" y="207" font-family="Arial" font-size="11" fill="#9b59b6">$4,500 / وحدة</text>
+  <text x="594" y="218" font-family="Arial" font-size="9" fill="#888">يطلب: 5 وحدات</text>
+
+  <rect x="578" y="230" width="192" height="55" rx="8" fill="#ffd70010" stroke="#ffd70020" stroke-width="1"/>
+  <text x="594" y="250" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">المشتري: VIP</text>
+  <text x="594" y="268" font-family="Arial" font-size="11" fill="#ffd700">$6,000 / وحدة</text>
+  <text x="594" y="279" font-family="Arial" font-size="9" fill="#888">يطلب: 3 وحدات</text>
+
+  <!-- Warning -->
+  <rect x="578" y="296" width="192" height="50" rx="8" fill="#ff386015" stroke="#ff386030" stroke-width="1"/>
+  <text x="594" y="316" font-family="Arial" font-size="11" fill="#ff3860">⚠️ مستوى الخطر</text>
+  <rect x="594" y="322" width="160" height="8" rx="4" fill="#1a1a2e"/>
+  <rect x="594" y="322" width="100" height="8" rx="4" fill="#ff3860"/>
+  <text x="680" y="334" font-family="Arial" font-size="9" fill="#ff3860">62%</text>
+
+  <rect x="578" y="356" width="192" height="38" rx="10" fill="url(#purple)"/>
+  <text x="674" y="379" font-family="Arial" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">بيع الآن 💰</text>
+
+  <text x="400" y="440" font-family="Arial" font-size="11" fill="#ffffff15" text-anchor="middle">RoodaScripts • نظام المخدرات المتطور</text>
+</svg>

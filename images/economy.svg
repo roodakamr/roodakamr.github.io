@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#080a0f"/>
+      <stop offset="100%" style="stop-color:#0a0e14"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ff87"/>
+      <stop offset="100%" style="stop-color:#00cc6a"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)"/>
+
+  <!-- Bank header -->
+  <rect x="0" y="0" width="800" height="60" fill="#0a0e14"/>
+  <text x="40" y="38" font-family="Arial" font-size="20" font-weight="bold" fill="#00ff87" filter="url(#glow)">🏦 RoodaBank</text>
+  <text x="215" y="38" font-family="Arial" font-size="12" fill="#888899">البنك الرقمي</text>
+  <rect x="580" y="16" width="190" height="28" rx="7" fill="#00ff8715" stroke="#00ff8740" stroke-width="1"/>
+  <text x="600" y="34" font-family="Arial" font-size="13" font-weight="bold" fill="#00ff87">💰 $124,850.00</text>
+
+  <!-- Left - Account info -->
+  <rect x="20" y="74" width="230" height="365" rx="12" fill="#0d1018" stroke="#00ff8720" stroke-width="1"/>
+  <text x="35" y="101" font-family="Arial" font-size="13" font-weight="bold" fill="#e8e8f0">👤 حسابي</text>
+
+  <!-- Balance card -->
+  <rect x="30" y="112" width="210" height="80" rx="10" fill="#00ff8712" stroke="#00ff8730" stroke-width="1"/>
+  <text x="45" y="135" font-family="Arial" font-size="11" fill="#888899">الرصيد الجاري</text>
+  <text x="45" y="162" font-family="Arial" font-size="26" font-weight="bold" fill="#00ff87" filter="url(#glow)">$124,850</text>
+  <text x="45" y="180" font-family="Arial" font-size="10" fill="#888899">↑ +$2,400 هذا الشهر</text>
+
+  <!-- Savings card -->
+  <rect x="30" y="200" width="210" height="60" rx="10" fill="#0a84ff12" stroke="#0a84ff30" stroke-width="1"/>
+  <text x="45" y="222" font-family="Arial" font-size="11" fill="#888899">حساب التوفير</text>
+  <text x="45" y="248" font-family="Arial" font-size="20" font-weight="bold" fill="#0a84ff">$56,200</text>
+
+  <!-- Crypto card -->
+  <rect x="30" y="268" width="210" height="60" rx="10" fill="#ffd70012" stroke="#ffd70030" stroke-width="1"/>
+  <text x="45" y="290" font-family="Arial" font-size="11" fill="#888899">المحفظة الرقمية</text>
+  <text x="45" y="316" font-family="Arial" font-size="20" font-weight="bold" fill="#ffd700">₿ 0.842</text>
+
+  <!-- Quick actions -->
+  <text x="35" y="355" font-family="Arial" font-size="11" font-weight="bold" fill="#888899">إجراءات سريعة</text>
+  <rect x="30" y="363" width="98" height="34" rx="8" fill="#00ff8720" stroke="#00ff8440" stroke-width="1"/>
+  <text x="52" y="384" font-family="Arial" font-size="11" fill="#00ff87">📤 تحويل</text>
+  <rect x="134" y="363" width="98" height="34" rx="8" fill="#0a84ff20" stroke="#0a84ff40" stroke-width="1"/>
+  <text x="156" y="384" font-family="Arial" font-size="11" fill="#0a84ff">💳 سحب</text>
+
+  <!-- Center - Transactions -->
+  <rect x="265" y="74" width="300" height="365" rx="12" fill="#0d1018" stroke="#00ff8720" stroke-width="1"/>
+  <text x="280" y="101" font-family="Arial" font-size="13" font-weight="bold" fill="#e8e8f0">📋 آخر المعاملات</text>
+
+  <!-- Transaction items -->
+  <!-- tx1 -->
+  <rect x="275" y="112" width="280" height="48" rx="8" fill="#00ff8710" stroke="#00ff8720" stroke-width="1"/>
+  <text x="290" y="132" font-family="Arial" font-size="20">💼</text>
+  <text x="320" y="131" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">راتب شهري - الشرطة</text>
+  <text x="320" y="148" font-family="Arial" font-size="10" fill="#888899">15/10/2024 • 09:00 PM</text>
+  <text x="490" y="131" font-family="Arial" font-size="14" font-weight="bold" fill="#00ff87">+$8,500</text>
+
+  <!-- tx2 -->
+  <rect x="275" y="166" width="280" height="48" rx="8" fill="#ff386010" stroke="#ff386020" stroke-width="1"/>
+  <text x="290" y="186" font-family="Arial" font-size="20">🏠</text>
+  <text x="320" y="185" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">إيجار المنزل</text>
+  <text x="320" y="202" font-family="Arial" font-size="10" fill="#888899">01/10/2024 • 12:00 AM</text>
+  <text x="490" y="185" font-family="Arial" font-size="14" font-weight="bold" fill="#ff3860">-$2,200</text>
+
+  <!-- tx3 -->
+  <rect x="275" y="220" width="280" height="48" rx="8" fill="#0a84ff10" stroke="#0a84ff20" stroke-width="1"/>
+  <text x="290" y="240" font-family="Arial" font-size="20">🚗</text>
+  <text x="320" y="239" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">شراء سيارة</text>
+  <text x="320" y="256" font-family="Arial" font-size="10" fill="#888899">28/09/2024 • 03:22 PM</text>
+  <text x="490" y="239" font-family="Arial" font-size="14" font-weight="bold" fill="#ff3860">-$45,000</text>
+
+  <!-- tx4 -->
+  <rect x="275" y="274" width="280" height="48" rx="8" fill="#00ff8710" stroke="#00ff8720" stroke-width="1"/>
+  <text x="290" y="294" font-family="Arial" font-size="20">📦</text>
+  <text x="320" y="293" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">مكافأة مهمة توصيل</text>
+  <text x="320" y="310" font-family="Arial" font-size="10" fill="#888899">25/09/2024 • 07:45 PM</text>
+  <text x="490" y="293" font-family="Arial" font-size="14" font-weight="bold" fill="#00ff87">+$1,850</text>
+
+  <!-- tx5 -->
+  <rect x="275" y="328" width="280" height="48" rx="8" fill="#ffd70010" stroke="#ffd70020" stroke-width="1"/>
+  <text x="290" y="348" font-family="Arial" font-size="20">🏪</text>
+  <text x="320" y="347" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">تحويل لـ Ahmed_01</text>
+  <text x="320" y="364" font-family="Arial" font-size="10" fill="#888899">20/09/2024 • 02:10 PM</text>
+  <text x="490" y="347" font-family="Arial" font-size="14" font-weight="bold" fill="#ff3860">-$5,000</text>
+
+  <!-- Load more -->
+  <rect x="335" y="388" width="160" height="34" rx="8" fill="#1a1a2e" stroke="#ffffff15" stroke-width="1"/>
+  <text x="415" y="409" font-family="Arial" font-size="12" fill="#888899" text-anchor="middle">عرض المزيد ↓</text>
+
+  <!-- Right - Chart/Transfer -->
+  <rect x="578" y="74" width="202" height="365" rx="12" fill="#0d1018" stroke="#00ff8720" stroke-width="1"/>
+  <text x="593" y="101" font-family="Arial" font-size="13" font-weight="bold" fill="#e8e8f0">📊 الإنفاق</text>
+
+  <!-- Bar chart -->
+  <g transform="translate(593, 280)">
+    <line x1="0" y1="0" x2="170" y2="0" stroke="#ffffff10" stroke-width="1"/>
+    <!-- Bars -->
+    <rect x="8" y="-120" width="20" height="120" rx="4" fill="#00ff8740"/>
+    <rect x="34" y="-90" width="20" height="90" rx="4" fill="#00ff8740"/>
+    <rect x="60" y="-140" width="20" height="140" rx="4" fill="#0a84ff40"/>
+    <rect x="86" y="-80" width="20" height="80" rx="4" fill="#00ff8740"/>
+    <rect x="112" y="-100" width="20" height="100" rx="4" fill="#00ff8740"/>
+    <rect x="138" y="-160" width="20" height="160" rx="4" fill="#ffd70040"/>
+    <!-- Active bars (tops) -->
+    <rect x="138" y="-160" width="20" height="10" rx="2" fill="#ffd700" filter="url(#glow)"/>
+    <rect x="60" y="-140" width="20" height="10" rx="2" fill="#0a84ff" filter="url(#glow)"/>
+    <!-- Labels -->
+    <text x="18" y="14" font-family="Arial" font-size="8" fill="#888" text-anchor="middle">سبت</text>
+    <text x="44" y="14" font-family="Arial" font-size="8" fill="#888" text-anchor="middle">أحد</text>
+    <text x="70" y="14" font-family="Arial" font-size="8" fill="#888" text-anchor="middle">اثن</text>
+    <text x="96" y="14" font-family="Arial" font-size="8" fill="#888" text-anchor="middle">ثلا</text>
+    <text x="122" y="14" font-family="Arial" font-size="8" fill="#888" text-anchor="middle">أرب</text>
+    <text x="148" y="14" font-family="Arial" font-size="8" fill="#ffd700" text-anchor="middle">خمس</text>
+  </g>
+
+  <!-- Transfer form -->
+  <text x="593" y="310" font-family="Arial" font-size="12" font-weight="bold" fill="#888899">تحويل سريع</text>
+  <rect x="588" y="320" width="182" height="32" rx="8" fill="#12182a" stroke="#00ff8820" stroke-width="1"/>
+  <text x="600" y="340" font-family="Arial" font-size="11" fill="#888899">اسم اللاعب أو ID...</text>
+
+  <rect x="588" y="360" width="182" height="32" rx="8" fill="#12182a" stroke="#00ff8820" stroke-width="1"/>
+  <text x="600" y="380" font-family="Arial" font-size="11" fill="#888899">المبلغ $...</text>
+
+  <rect x="588" y="400" width="182" height="32" rx="8" fill="url(#green)"/>
+  <text x="679" y="421" font-family="Arial" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">تحويل الآن ➤</text>
+
+  <text x="400" y="440" font-family="Arial" font-size="11" fill="#ffffff15" text-anchor="middle">RoodaScripts • نظام البنك والاقتصاد</text>
+</svg>

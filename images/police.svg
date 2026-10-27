@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#050810"/>
+      <stop offset="100%" style="stop-color:#080d18"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect x="0" y="0" width="800" height="55" fill="#0d1020"/>
+
+  <!-- Header -->
+  <text x="30" y="37" font-family="Arial" font-size="18" font-weight="bold" fill="#0a84ff" filter="url(#glow)">🚔 نظام MDT الشرطة</text>
+  <text x="350" y="37" font-family="Arial" font-size="12" fill="#888899">Mobile Data Terminal v3.1</text>
+  <rect x="640" y="15" width="130" height="26" rx="6" fill="#ff386015" stroke="#ff386040" stroke-width="1"/>
+  <circle cx="655" cy="28" r="4" fill="#ff3860"/>
+  <text x="665" y="33" font-family="Arial" font-size="11" fill="#ff3860">⚠ تنبيه نشط: 3</text>
+
+  <!-- Left Panel - Search -->
+  <rect x="20" y="70" width="240" height="365" rx="12" fill="#0d1525" stroke="#0a84ff20" stroke-width="1"/>
+  <text x="35" y="97" font-family="Arial" font-size="13" font-weight="bold" fill="#e8e8f0">🔍 البحث</text>
+
+  <!-- Search box -->
+  <rect x="30" y="108" width="220" height="38" rx="8" fill="#12182a" stroke="#0a84ff30" stroke-width="1"/>
+  <text x="48" y="132" font-family="Arial" font-size="12" fill="#888899">ابحث عن مشتبه...</text>
+
+  <!-- Filter buttons -->
+  <rect x="30" y="155" width="68" height="28" rx="6" fill="#0a84ff"/>
+  <text x="45" y="173" font-family="Arial" font-size="11" font-weight="bold" fill="#fff">الكل</text>
+  <rect x="104" y="155" width="68" height="28" rx="6" fill="#12182a"/>
+  <text x="114" y="173" font-family="Arial" font-size="11" fill="#888">مطلوب</text>
+  <rect x="178" y="155" width="68" height="28" rx="6" fill="#12182a"/>
+  <text x="188" y="173" font-family="Arial" font-size="11" fill="#888">سجل</text>
+
+  <!-- Recent suspects list -->
+  <text x="35" y="205" font-family="Arial" font-size="11" fill="#888899">السجلات الأخيرة</text>
+
+  <!-- Person 1 - Wanted -->
+  <rect x="30" y="215" width="220" height="52" rx="8" fill="#ff386010" stroke="#ff386030" stroke-width="1"/>
+  <circle cx="52" cy="241" r="14" fill="#ff386030"/>
+  <text x="47" y="246" font-family="Arial" font-size="13">👤</text>
+  <text x="72" y="234" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">خالد المطيري</text>
+  <text x="72" y="250" font-family="Arial" font-size="10" fill="#ff3860">● مطلوب للاعتقال</text>
+  <text x="72" y="262" font-family="Arial" font-size="9" fill="#888">ID: #4721</text>
+
+  <!-- Person 2 - Clean -->
+  <rect x="30" y="273" width="220" height="52" rx="8" fill="#12182a" stroke="#0a84ff20" stroke-width="1"/>
+  <circle cx="52" cy="299" r="14" fill="#0a84ff20"/>
+  <text x="47" y="304" font-family="Arial" font-size="13">👤</text>
+  <text x="72" y="292" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">أحمد السهلي</text>
+  <text x="72" y="308" font-family="Arial" font-size="10" fill="#00ff87">● سجل نظيف</text>
+  <text x="72" y="320" font-family="Arial" font-size="9" fill="#888">ID: #3892</text>
+
+  <!-- Person 3 - Warning -->
+  <rect x="30" y="331" width="220" height="52" rx="8" fill="#ffd70010" stroke="#ffd70030" stroke-width="1"/>
+  <circle cx="52" cy="357" r="14" fill="#ffd70020"/>
+  <text x="47" y="362" font-family="Arial" font-size="13">👤</text>
+  <text x="72" y="350" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">فهد العنزي</text>
+  <text x="72" y="366" font-family="Arial" font-size="10" fill="#ffd700">● تحت المراقبة</text>
+  <text x="72" y="378" font-family="Arial" font-size="9" fill="#888">ID: #5103</text>
+
+  <!-- Center/Main Panel - Profile -->
+  <rect x="275" y="70" width="310" height="365" rx="12" fill="#0d1525" stroke="#0a84ff20" stroke-width="1"/>
+
+  <!-- Profile header -->
+  <rect x="275" y="70" width="310" height="80" rx="12" fill="#ff386015" stroke="#ff386030" stroke-width="1"/>
+  <rect x="275" y="120" width="310" height="30" fill="#ff386015"/>
+
+  <circle cx="318" cy="110" r="28" fill="#ff386025" stroke="#ff3860" stroke-width="2"/>
+  <text x="307" y="118" font-family="Arial" font-size="24">👤</text>
+
+  <text x="358" y="97" font-family="Arial" font-size="16" font-weight="bold" fill="#ffffff">خالد المطيري</text>
+  <rect x="358" y="103" width="80" height="18" rx="5" fill="#ff3860"/>
+  <text x="368" y="116" font-family="Arial" font-size="11" font-weight="bold" fill="#fff">⚠ مطلوب</text>
+  <text x="358" y="137" font-family="Arial" font-size="10" fill="#888899">ID: #4721 • عمر: 28</text>
+
+  <!-- Info grid -->
+  <rect x="290" y="165" width="135" height="45" rx="8" fill="#12182a"/>
+  <text x="300" y="183" font-family="Arial" font-size="10" fill="#888899">رقم الهوية</text>
+  <text x="300" y="200" font-family="Arial" font-size="13" font-weight="bold" fill="#e8e8f0">1027834XXX</text>
+
+  <rect x="435" y="165" width="135" height="45" rx="8" fill="#12182a"/>
+  <text x="445" y="183" font-family="Arial" font-size="10" fill="#888899">رقم اللوحة</text>
+  <text x="445" y="200" font-family="Arial" font-size="13" font-weight="bold" fill="#0a84ff">ABC-2847</text>
+
+  <!-- Crimes -->
+  <text x="292" y="232" font-family="Arial" font-size="12" font-weight="bold" fill="#888899">الجرائم المسجلة</text>
+
+  <rect x="290" y="240" width="275" height="30" rx="6" fill="#ff386015" stroke="#ff386025" stroke-width="1"/>
+  <text x="300" y="259" font-family="Arial" font-size="11" fill="#ff3860">🔴 سرقة مسلحة - 15/03/2024</text>
+
+  <rect x="290" y="276" width="275" height="30" rx="6" fill="#ffd70015" stroke="#ffd70025" stroke-width="1"/>
+  <text x="300" y="295" font-family="Arial" font-size="11" fill="#ffd700">🟡 تعدي على ممتلكات - 08/02/2024</text>
+
+  <rect x="290" y="312" width="275" height="30" rx="6" fill="#ff386015" stroke="#ff386025" stroke-width="1"/>
+  <text x="300" y="331" font-family="Arial" font-size="11" fill="#ff3860">🔴 مقاومة الاعتقال - 22/01/2024</text>
+
+  <!-- Action buttons -->
+  <rect x="290" y="358" width="130" height="35" rx="8" fill="#ff3860"/>
+  <text x="330" y="380" font-family="Arial" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">اعتقال فوري</text>
+
+  <rect x="430" y="358" width="130" height="35" rx="8" fill="#0a84ff20" stroke="#0a84ff50" stroke-width="1"/>
+  <text x="495" y="380" font-family="Arial" font-size="12" fill="#0a84ff" text-anchor="middle">إضافة تقرير</text>
+
+  <!-- Right Panel - Map/Dispatch -->
+  <rect x="600" y="70" width="180" height="365" rx="12" fill="#0d1525" stroke="#0a84ff20" stroke-width="1"/>
+  <text x="615" y="97" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">📡 الإرسال</text>
+
+  <!-- Mini dispatch map -->
+  <rect x="610" y="105" width="160" height="130" rx="8" fill="#08101a"/>
+  <line x1="610" y1="170" x2="770" y2="170" stroke="#ffffff08" stroke-width="1"/>
+  <line x1="690" y1="105" x2="690" y2="235" stroke="#ffffff08" stroke-width="1"/>
+  <circle cx="650" cy="148" r="6" fill="#ff3860" filter="url(#glow)"/>
+  <circle cx="720" cy="180" r="6" fill="#0a84ff" filter="url(#glow)"/>
+  <circle cx="635" cy="200" r="5" fill="#ffd700"/>
+  <text x="690" y="248" font-family="Arial" font-size="10" fill="#888899" text-anchor="middle">خريطة الإرسال</text>
+
+  <!-- Active units -->
+  <text x="615" y="270" font-family="Arial" font-size="11" font-weight="bold" fill="#888899">الوحدات النشطة</text>
+  <rect x="610" y="278" width="160" height="30" rx="6" fill="#0a84ff15" stroke="#0a84ff30" stroke-width="1"/>
+  <circle cx="624" cy="293" r="4" fill="#0a84ff"/>
+  <text x="634" y="297" font-family="Arial" font-size="11" fill="#e8e8f0">وحدة-01 • نشطة</text>
+  <rect x="610" y="314" width="160" height="30" rx="6" fill="#0a84ff15" stroke="#0a84ff30" stroke-width="1"/>
+  <circle cx="624" cy="329" r="4" fill="#00ff87"/>
+  <text x="634" y="333" font-family="Arial" font-size="11" fill="#e8e8f0">وحدة-04 • دورية</text>
+  <rect x="610" y="350" width="160" height="30" rx="6" fill="#ff386015" stroke="#ff386030" stroke-width="1"/>
+  <circle cx="624" cy="365" r="4" fill="#ff3860"/>
+  <text x="634" y="369" font-family="Arial" font-size="11" fill="#ff3860">وحدة-07 • استجابة</text>
+
+  <text x="400" y="440" font-family="Arial" font-size="11" fill="#ffffff15" text-anchor="middle">RoodaScripts • نظام MDT الشرطة</text>
+</svg>
