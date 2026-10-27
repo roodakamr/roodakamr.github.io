@@ -17,9 +17,9 @@ const scripts = [
     features_ar: ['أكثر من 50 وظيفة', 'نظام ترقيات', 'مكافآت يومية', 'متوافق ESX/QBCore', 'واجهة مميزة', 'لوحة إدارة'],
     features_en: ['50+ Jobs', 'Promotion System', 'Daily Rewards', 'ESX/QBCore Compatible', 'Custom UI', 'Admin Panel'],
     images: [
-      'images/jobs.svg',
-      'images/hud.svg',
-      'images/delivery.svg',
+      '/images/jobs.svg',
+      '/images/hud.svg',
+      '/images/delivery.svg',
     ],
     color: '#00ff87',
     emoji: '💼'
@@ -41,8 +41,8 @@ const scripts = [
     features_ar: ['عرض ثلاثي الأبعاد', 'نظام تمويل', 'تخصيص كامل', 'فئات متعددة', 'متوافق VORP', 'إدارة المخزون'],
     features_en: ['3D Preview', 'Finance System', 'Full Customization', 'Multiple Categories', 'VORP Compatible', 'Inventory Management'],
     images: [
-      'images/vehicles.svg',
-      'images/hud.svg',
+      '/images/vehicles.svg',
+      '/images/hud.svg',
     ],
     color: '#0a84ff',
     emoji: '🚗'
@@ -64,9 +64,9 @@ const scripts = [
     features_ar: ['زراعة ومعالجة', 'سوق سوداء', 'شرطة ذكاء اصطناعي', '+10 أنواع', 'مناطق حصرية', 'نظام مخاطر'],
     features_en: ['Plant & Process', 'Black Market', 'AI Police', '10+ Types', 'Exclusive Zones', 'Risk System'],
     images: [
-      'images/drugs.svg',
-      'images/economy.svg',
-      'images/police.svg',
+      '/images/drugs.svg',
+      '/images/economy.svg',
+      '/images/police.svg',
     ],
     color: '#ff3860',
     emoji: '💊'
@@ -88,8 +88,8 @@ const scripts = [
     features_ar: ['شراء وإيجار', 'تأثيث كامل', 'نظام قفل', '+100 منزل', 'ضيافة الأصدقاء', 'إدارة الملكية'],
     features_en: ['Buy & Rent', 'Full Furnishing', 'Lock System', '100+ Homes', 'Guest System', 'Property Management'],
     images: [
-      'images/housing.svg',
-      'images/economy.svg',
+      '/images/housing.svg',
+      '/images/economy.svg',
     ],
     color: '#ffd700',
     emoji: '🏠'
@@ -111,8 +111,8 @@ const scripts = [
     features_ar: ['قاعدة بيانات', 'تتبع السيارات', 'إدارة المكالمات', 'بطاقات هوية', 'سجل الجرائم', 'واجهة عصرية'],
     features_en: ['Criminal Database', 'Vehicle Tracking', 'Call Management', 'ID Cards', 'Crime History', 'Modern UI'],
     images: [
-      'images/police.svg',
-      'images/prison.svg',
+      '/images/police.svg',
+      '/images/prison.svg',
     ],
     color: '#0a84ff',
     emoji: '🚔'
@@ -134,8 +134,8 @@ const scripts = [
     features_ar: ['قابل للتخصيص', 'متعدد الثيمات', 'مؤشرات كاملة', 'خفيف الأداء', 'دعم الموبايل', 'تحديثات مستمرة'],
     features_en: ['Fully Customizable', 'Multiple Themes', 'Full Indicators', 'Performance Friendly', 'Mobile Support', 'Continuous Updates'],
     images: [
-      'images/hud.svg',
-      'images/vehicles.svg',
+      '/images/hud.svg',
+      '/images/vehicles.svg',
     ],
     color: '#00ff87',
     emoji: '🎮'
@@ -155,8 +155,8 @@ const scripts = [
     features_ar: ['نظام بنكي', 'محافظ رقمية', 'تحويلات مالية', 'نظام قروض', 'بطاقات ائتمان', 'عملات متعددة'],
     features_en: ['Banking System', 'Digital Wallets', 'Money Transfers', 'Loan System', 'Credit Cards', 'Multiple Currencies'],
     images: [
-      'images/economy.svg',
-      'images/jobs.svg',
+      '/images/economy.svg',
+      '/images/jobs.svg',
     ],
     color: '#ffd700',
     emoji: '💰'
@@ -178,8 +178,8 @@ const scripts = [
     features_ar: ['مهام عشوائية', 'خرائط تفاعلية', 'مكافآت متدرجة', 'عدة مركبات', 'نظام تقييم', 'لوحة صدارة'],
     features_en: ['Random Missions', 'Interactive Maps', 'Tiered Rewards', 'Multiple Vehicles', 'Rating System', 'Leaderboard'],
     images: [
-      'images/delivery.svg',
-      'images/hud.svg',
+      '/images/delivery.svg',
+      '/images/hud.svg',
     ],
     color: '#0a84ff',
     emoji: '📦'
@@ -199,8 +199,8 @@ const scripts = [
     features_ar: ['أنشطة داخل السجن', 'نظام هروب', 'تقليل الوقت', 'إدارة سجناء', 'أنظمة أمن', 'تكامل شرطة'],
     features_en: ['In-Prison Activities', 'Escape System', 'Time Reduction', 'Inmate Management', 'Security Systems', 'Police Integration'],
     images: [
-      'images/prison.svg',
-      'images/police.svg',
+      '/images/prison.svg',
+      '/images/police.svg',
     ],
     color: '#ff3860',
     emoji: '⛓️'
@@ -293,7 +293,7 @@ function renderScripts(filter = 'all') {
     return `
     <div class="script-card reveal" data-id="${s.id}" onclick="openModal(${s.id})">
       <div class="script-card-media">
-        <img src="${img}" alt="${title}" loading="lazy" onerror="this.src='https://placehold.co/600x400/12121e/00ff87?text=${encodeURIComponent(s.emoji)}'">
+        <img src="${img}" alt="${title}" loading="lazy">
         ${s.badge ? `<div class="card-badge badge-${s.badge}">${badgeLabel}</div>` : ''}
         <div class="media-overlay"><span class="media-overlay-text">${lang === 'ar' ? 'انقر لعرض التفاصيل' : 'Click for details'}</span></div>
       </div>
@@ -336,7 +336,7 @@ function openModal(id) {
 
   // Build slider images from local SVG files
   const sliderImgs = s.images.map((imgUrl, i) => {
-    return `<img src="${imgUrl}" alt="${title} ${i+1}" class="${i===0?'active':''}" data-idx="${i}" onerror="this.src='https://placehold.co/900x380/0a0a12/00ff87?text=${encodeURIComponent(s.emoji)}'">`;
+    return `<img src="${imgUrl}" alt="${title} ${i+1}" class="${i===0?'active':''}" data-idx="${i}">`;
   }).join('');
 
   const dots = Array.from({length: s.images.length}, (_, i) =>
