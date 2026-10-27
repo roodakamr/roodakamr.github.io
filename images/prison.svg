@@ -1,136 +1,135 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#060810"/>
-      <stop offset="100%" style="stop-color:#080c12"/>
+      <stop offset="0%" stop-color="#060810"/>
+      <stop offset="100%" stop-color="#080c14"/>
     </linearGradient>
-    <filter id="glow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <linearGradient id="red" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff3860"/>
+      <stop offset="100%" stop-color="#cc1a3a"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-
   <rect width="800" height="450" fill="url(#bg)"/>
-  <rect x="0" y="0" width="800" height="58" fill="#0a0c14"/>
+  <rect width="800" height="6" fill="url(#red)"/>
+  <rect x="0" y="0" width="800" height="60" fill="#060810"/>
+  <rect width="800" height="6" fill="url(#red)"/>
+  <text x="36" y="38" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#ff3860" filter="url(#glow)">Prison System</text>
+  <text x="210" y="38" font-family="Arial,sans-serif" font-size="13" fill="#ffffff50">Realistic Detention Center</text>
+  <rect x="606" y="16" width="174" height="28" rx="7" fill="#ff386015" stroke="#ff386040" stroke-width="1"/>
+  <text x="624" y="34" font-family="Arial,sans-serif" font-size="12" fill="#ff3860">Inmates: 12 / 50</text>
 
-  <!-- Header -->
-  <text x="35" y="38" font-family="Arial" font-size="18" font-weight="bold" fill="#ff3860" filter="url(#glow)">⛓️ نظام السجن</text>
-  <rect x="600" y="14" width="180" height="30" rx="8" fill="#ff386015" stroke="#ff386040" stroke-width="1"/>
-  <text x="618" y="34" font-family="Arial" font-size="12" fill="#ff3860">🔒 السجناء: 12 / 50</text>
+  <!-- Left - Inmate profile -->
+  <rect x="20" y="72" width="240" height="365" rx="12" fill="#0c0e16" stroke="#ff386020" stroke-width="1"/>
+  <text x="36" y="99" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#e0e0f0">Inmate Profile</text>
 
-  <!-- Left - Prisoner info -->
-  <rect x="20" y="70" width="240" height="365" rx="12" fill="#0d1018" stroke="#ff386020" stroke-width="1"/>
-  <text x="35" y="97" font-family="Arial" font-size="13" font-weight="bold" fill="#e8e8f0">👤 ملف السجين</text>
-
-  <!-- Mugshot area -->
-  <rect x="30" y="108" width="220" height="120" rx="10" fill="#12141e" stroke="#ff386030" stroke-width="1"/>
+  <!-- Mugshot -->
+  <rect x="30" y="108" width="220" height="120" rx="10" fill="#10121e" stroke="#ff386030" stroke-width="1"/>
   <circle cx="90" cy="168" r="38" fill="#1e2030" stroke="#ff386040" stroke-width="2"/>
-  <text x="78" y="176" font-family="Arial" font-size="30">👤</text>
-  <text x="148" y="130" font-family="Arial" font-size="14" font-weight="bold" fill="#e8e8f0">سالم الدوسري</text>
-  <rect x="140" y="138" width="80" height="18" rx="5" fill="#ff3860"/>
-  <text x="150" y="151" font-family="Arial" font-size="10" font-weight="bold" fill="#fff">⛓️ محتجز</text>
-  <text x="140" y="172" font-family="Arial" font-size="11" fill="#888">ID: #P-0042</text>
-  <text x="140" y="190" font-family="Arial" font-size="11" fill="#888">زنزانة: B-07</text>
-  <text x="140" y="208" font-family="Arial" font-size="11" fill="#888">الجريمة: سطو</text>
+  <!-- Simple person silhouette -->
+  <circle cx="90" cy="148" r="14" fill="#2a2a40"/>
+  <rect x="72" y="165" width="36" height="28" rx="5" fill="#2a2a40"/>
+  <text x="148" y="130" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#e0e0f0">Salem Al-Dosari</text>
+  <rect x="140" y="138" width="100" height="20" rx="5" fill="#ff3860"/>
+  <text x="190" y="152" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">DETAINED</text>
+  <text x="140" y="172" font-family="Arial,sans-serif" font-size="11" fill="#888">ID: #P-0042</text>
+  <text x="140" y="190" font-family="Arial,sans-serif" font-size="11" fill="#888">Cell: B-07</text>
+  <text x="140" y="208" font-family="Arial,sans-serif" font-size="11" fill="#888">Crime: Robbery</text>
 
   <!-- Sentence timer -->
-  <rect x="30" y="238" width="220" height="60" rx="10" fill="#ff386015" stroke="#ff386030" stroke-width="1"/>
-  <text x="45" y="258" font-family="Arial" font-size="11" fill="#888899">الوقت المتبقي من الحكم</text>
-  <text x="90" y="287" font-family="Arial" font-size="26" font-weight="bold" fill="#ff3860" text-anchor="middle" filter="url(#glow)">14:22</text>
-  <text x="180" y="283" font-family="Arial" font-size="10" fill="#888">دقيقة</text>
+  <rect x="30" y="238" width="220" height="62" rx="10" fill="#ff386015" stroke="#ff386030" stroke-width="1"/>
+  <text x="46" y="260" font-family="Arial,sans-serif" font-size="11" fill="#888">Sentence Time Remaining</text>
+  <text x="130" y="292" font-family="Arial,sans-serif" font-size="32" font-weight="bold" fill="#ff3860" text-anchor="middle" filter="url(#glow)">14:22</text>
+  <text x="208" y="292" font-family="Arial,sans-serif" font-size="10" fill="#888">min</text>
 
   <!-- Tasks -->
-  <text x="35" y="322" font-family="Arial" font-size="11" font-weight="bold" fill="#888899">مهام التخفيف</text>
+  <text x="36" y="322" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#888">Reduction Tasks</text>
   <rect x="30" y="330" width="220" height="30" rx="8" fill="#00ff8710" stroke="#00ff8820" stroke-width="1"/>
-  <text x="45" y="349" font-family="Arial" font-size="11" fill="#00ff87">✓ تنظيف الزنزانة (-2 دقيقة)</text>
+  <text x="46" y="349" font-family="Arial,sans-serif" font-size="11" fill="#00ff87">Clean Cell (-2 min)</text>
   <rect x="30" y="366" width="220" height="30" rx="8" fill="#0a84ff10" stroke="#0a84ff20" stroke-width="1"/>
-  <text x="45" y="385" font-family="Arial" font-size="11" fill="#0a84ff">⏳ عمل في المطبخ (-5 دقيقة)</text>
+  <text x="46" y="385" font-family="Arial,sans-serif" font-size="11" fill="#0a84ff">Work in Kitchen (-5 min)</text>
 
-  <!-- Bail button -->
-  <rect x="30" y="402" width="220" height="24" rx="8" fill="#ffd70020" stroke="#ffd70040" stroke-width="1"/>
-  <text x="140" y="419" font-family="Arial" font-size="11" font-weight="bold" fill="#ffd700" text-anchor="middle">💰 كفالة: $15,000</text>
+  <rect x="30" y="402" width="220" height="26" rx="8" fill="#ffd70020" stroke="#ffd70040" stroke-width="1"/>
+  <text x="140" y="419" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#ffd700" text-anchor="middle">Bail: $15,000</text>
 
   <!-- Center - Prison map -->
-  <rect x="274" y="70" width="290" height="365" rx="12" fill="#0d1018" stroke="#ff386020" stroke-width="1"/>
-  <text x="290" y="97" font-family="Arial" font-size="13" font-weight="bold" fill="#e8e8f0">🗺️ مخطط السجن</text>
+  <rect x="274" y="72" width="294" height="365" rx="12" fill="#0c0e16" stroke="#ff386020" stroke-width="1"/>
+  <text x="290" y="99" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#e0e0f0">Prison Map</text>
 
-  <!-- Prison map illustration -->
-  <g transform="translate(280, 110)">
+  <g transform="translate(282, 110)">
     <!-- Outer walls -->
-    <rect x="0" y="0" width="270" height="200" rx="0" fill="none" stroke="#ff386050" stroke-width="3"/>
-    <!-- Guard towers corners -->
+    <rect x="0" y="0" width="270" height="210" fill="none" stroke="#ff386050" stroke-width="3"/>
+    <!-- Guard towers -->
     <rect x="-8" y="-8" width="20" height="20" rx="2" fill="#ff386040" stroke="#ff386060" stroke-width="1"/>
     <rect x="258" y="-8" width="20" height="20" rx="2" fill="#ff386040" stroke="#ff386060" stroke-width="1"/>
-    <rect x="-8" y="188" width="20" height="20" rx="2" fill="#ff386040" stroke="#ff386060" stroke-width="1"/>
-    <rect x="258" y="188" width="20" height="20" rx="2" fill="#ff386040" stroke="#ff386060" stroke-width="1"/>
-
-    <!-- Cell blocks -->
-    <rect x="10" y="15" width="55" height="80" rx="3" fill="#12182a" stroke="#0a84ff30" stroke-width="1"/>
-    <text x="37" y="58" font-family="Arial" font-size="9" fill="#0a84ff" text-anchor="middle">بلوك A</text>
-    <!-- Cell lines -->
-    <line x1="10" y1="35" x2="65" y2="35" stroke="#0a84ff15" stroke-width="1"/>
-    <line x1="10" y1="55" x2="65" y2="55" stroke="#0a84ff15" stroke-width="1"/>
-    <line x1="10" y1="75" x2="65" y2="75" stroke="#0a84ff15" stroke-width="1"/>
-
-    <rect x="75" y="15" width="55" height="80" rx="3" fill="#12182a" stroke="#0a84ff30" stroke-width="1"/>
-    <text x="102" y="58" font-family="Arial" font-size="9" fill="#0a84ff" text-anchor="middle">بلوك B</text>
-    <line x1="75" y1="35" x2="130" y2="35" stroke="#0a84ff15" stroke-width="1"/>
-    <line x1="75" y1="55" x2="130" y2="55" stroke="#0a84ff15" stroke-width="1"/>
-    <line x1="75" y1="75" x2="130" y2="75" stroke="#0a84ff15" stroke-width="1"/>
-
-    <rect x="140" y="15" width="55" height="80" rx="3" fill="#12182a" stroke="#ff386030" stroke-width="1"/>
-    <text x="167" y="58" font-family="Arial" font-size="9" fill="#ff3860" text-anchor="middle">بلوك C</text>
-    <line x1="140" y1="35" x2="195" y2="35" stroke="#ff386015" stroke-width="1"/>
-    <line x1="140" y1="55" x2="195" y2="55" stroke="#ff386015" stroke-width="1"/>
-    <line x1="140" y1="75" x2="195" y2="75" stroke="#ff386015" stroke-width="1"/>
-
-    <!-- Active cell highlight -->
-    <rect x="75" y="55" width="55" height="20" fill="#ff386030" stroke="#ff386060" stroke-width="1"/>
-    <circle cx="102" cy="65" r="4" fill="#ff3860" filter="url(#glow)"/>
-
+    <rect x="-8" y="198" width="20" height="20" rx="2" fill="#ff386040" stroke="#ff386060" stroke-width="1"/>
+    <rect x="258" y="198" width="20" height="20" rx="2" fill="#ff386040" stroke="#ff386060" stroke-width="1"/>
+    <!-- Block A -->
+    <rect x="10" y="15" width="58" height="84" rx="3" fill="#10182a" stroke="#0a84ff30" stroke-width="1"/>
+    <text x="39" y="60" font-family="Arial,sans-serif" font-size="10" fill="#0a84ff" text-anchor="middle">Block A</text>
+    <line x1="10" y1="36" x2="68" y2="36" stroke="#0a84ff15" stroke-width="1"/>
+    <line x1="10" y1="57" x2="68" y2="57" stroke="#0a84ff15" stroke-width="1"/>
+    <line x1="10" y1="78" x2="68" y2="78" stroke="#0a84ff15" stroke-width="1"/>
+    <!-- Block B - active -->
+    <rect x="78" y="15" width="58" height="84" rx="3" fill="#10182a" stroke="#0a84ff30" stroke-width="1"/>
+    <text x="107" y="60" font-family="Arial,sans-serif" font-size="10" fill="#0a84ff" text-anchor="middle">Block B</text>
+    <line x1="78" y1="36" x2="136" y2="36" stroke="#0a84ff15" stroke-width="1"/>
+    <line x1="78" y1="57" x2="136" y2="57" stroke="#0a84ff15" stroke-width="1"/>
+    <line x1="78" y1="78" x2="136" y2="78" stroke="#0a84ff15" stroke-width="1"/>
+    <!-- Highlight active cell -->
+    <rect x="78" y="57" width="58" height="21" fill="#ff386030" stroke="#ff386060" stroke-width="1"/>
+    <circle cx="107" cy="68" r="5" fill="#ff3860" filter="url(#glow)"/>
+    <!-- Block C -->
+    <rect x="146" y="15" width="58" height="84" rx="3" fill="#10182a" stroke="#ff386030" stroke-width="1"/>
+    <text x="175" y="60" font-family="Arial,sans-serif" font-size="10" fill="#ff3860" text-anchor="middle">Block C</text>
+    <line x1="146" y1="36" x2="204" y2="36" stroke="#ff386015" stroke-width="1"/>
+    <line x1="146" y1="57" x2="204" y2="57" stroke="#ff386015" stroke-width="1"/>
+    <line x1="146" y1="78" x2="204" y2="78" stroke="#ff386015" stroke-width="1"/>
+    <!-- Block D -->
+    <rect x="214" y="15" width="48" height="84" rx="3" fill="#10182a" stroke="#0a84ff30" stroke-width="1"/>
+    <text x="238" y="60" font-family="Arial,sans-serif" font-size="10" fill="#0a84ff" text-anchor="middle">D</text>
     <!-- Yard -->
-    <rect x="10" y="105" width="185" height="75" rx="4" fill="#0d1220" stroke="#00ff8715" stroke-width="1"/>
-    <text x="102" y="145" font-family="Arial" font-size="10" fill="#00ff8760" text-anchor="middle">الفناء الخارجي</text>
-    <!-- Yard dots (prisoners) -->
-    <circle cx="40" cy="130" r="4" fill="#ffd700" opacity="0.7"/>
-    <circle cx="60" cy="150" r="4" fill="#ffd700" opacity="0.7"/>
-    <circle cx="80" cy="135" r="4" fill="#ffd700" opacity="0.7"/>
-    <circle cx="130" cy="145" r="4" fill="#ff3860" filter="url(#glow)"/>
-    <text x="130" y="143" font-family="Arial" font-size="7" fill="#ff3860" text-anchor="middle">⚠</text>
-
+    <rect x="10" y="110" width="190" height="80" rx="5" fill="#0c1220" stroke="#00ff8715" stroke-width="1"/>
+    <text x="105" y="153" font-family="Arial,sans-serif" font-size="10" fill="#00ff8760" text-anchor="middle">Outdoor Yard</text>
+    <!-- Inmate dots in yard -->
+    <circle cx="40" cy="130" r="5" fill="#ffd700" opacity="0.8"/>
+    <circle cx="60" cy="150" r="5" fill="#ffd700" opacity="0.8"/>
+    <circle cx="85" cy="132" r="5" fill="#ffd700" opacity="0.8"/>
+    <circle cx="130" cy="148" r="5" fill="#ff3860" filter="url(#glow)"/>
     <!-- Guard post -->
-    <rect x="210" y="105" width="50" height="75" rx="4" fill="#0a84ff10" stroke="#0a84ff25" stroke-width="1"/>
-    <text x="235" y="145" font-family="Arial" font-size="9" fill="#0a84ff" text-anchor="middle">قسم الحراسة</text>
+    <rect x="214" y="110" width="48" height="80" rx="4" fill="#0a84ff10" stroke="#0a84ff25" stroke-width="1"/>
+    <text x="238" y="153" font-family="Arial,sans-serif" font-size="9" fill="#0a84ff" text-anchor="middle">Guard</text>
   </g>
 
-  <!-- Right - Stats panel -->
-  <rect x="578" y="70" width="202" height="365" rx="12" fill="#0d1018" stroke="#ff386020" stroke-width="1"/>
-  <text x="593" y="97" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">📊 إحصائيات</text>
+  <!-- Right - Stats -->
+  <rect x="582" y="72" width="198" height="365" rx="12" fill="#0c0e16" stroke="#ff386020" stroke-width="1"/>
+  <text x="598" y="99" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#e0e0f0">Statistics</text>
 
-  <!-- Stats -->
-  <rect x="588" y="108" width="182" height="50" rx="8" fill="#ff386015" stroke="#ff386025" stroke-width="1"/>
-  <text x="679" y="126" font-family="Arial" font-size="12" fill="#888899" text-anchor="middle">السجناء الحاليون</text>
-  <text x="679" y="150" font-family="Arial" font-size="24" font-weight="bold" fill="#ff3860" text-anchor="middle" filter="url(#glow)">12</text>
+  <rect x="592" y="108" width="178" height="54" rx="8" fill="#ff386015" stroke="#ff386025" stroke-width="1"/>
+  <text x="681" y="126" font-family="Arial,sans-serif" font-size="12" fill="#888" text-anchor="middle">Current Inmates</text>
+  <text x="681" y="152" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#ff3860" text-anchor="middle" filter="url(#glow)">12</text>
 
-  <rect x="588" y="166" width="182" height="50" rx="8" fill="#0a84ff10" stroke="#0a84ff20" stroke-width="1"/>
-  <text x="679" y="184" font-family="Arial" font-size="12" fill="#888899" text-anchor="middle">الهروب هذا الأسبوع</text>
-  <text x="679" y="208" font-family="Arial" font-size="24" font-weight="bold" fill="#0a84ff" text-anchor="middle">3</text>
+  <rect x="592" y="168" width="178" height="54" rx="8" fill="#0a84ff10" stroke="#0a84ff20" stroke-width="1"/>
+  <text x="681" y="186" font-family="Arial,sans-serif" font-size="12" fill="#888" text-anchor="middle">Escapes This Week</text>
+  <text x="681" y="212" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#0a84ff" text-anchor="middle">3</text>
 
-  <rect x="588" y="224" width="182" height="50" rx="8" fill="#00ff8710" stroke="#00ff8820" stroke-width="1"/>
-  <text x="679" y="242" font-family="Arial" font-size="12" fill="#888899" text-anchor="middle">أُطلق سراحهم</text>
-  <text x="679" y="266" font-family="Arial" font-size="24" font-weight="bold" fill="#00ff87" text-anchor="middle">28</text>
+  <rect x="592" y="228" width="178" height="54" rx="8" fill="#00ff8710" stroke="#00ff8820" stroke-width="1"/>
+  <text x="681" y="246" font-family="Arial,sans-serif" font-size="12" fill="#888" text-anchor="middle">Released</text>
+  <text x="681" y="272" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#00ff87" text-anchor="middle">28</text>
 
-  <!-- Log -->
-  <text x="593" y="295" font-family="Arial" font-size="11" font-weight="bold" fill="#888899">آخر الأحداث</text>
-  <rect x="588" y="303" width="182" height="28" rx="6" fill="#12182a"/>
-  <text x="598" y="321" font-family="Arial" font-size="10" fill="#ffd700">⚠ هروب محاولة - بلوك C</text>
-  <rect x="588" y="336" width="182" height="28" rx="6" fill="#12182a"/>
-  <text x="598" y="354" font-family="Arial" font-size="10" fill="#00ff87">✓ أُطلق سراح #P-0039</text>
-  <rect x="588" y="369" width="182" height="28" rx="6" fill="#12182a"/>
-  <text x="598" y="387" font-family="Arial" font-size="10" fill="#0a84ff">📥 دخول جديد #P-0042</text>
+  <text x="598" y="300" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#888">Recent Events</text>
+  <rect x="592" y="308" width="178" height="28" rx="6" fill="#10121e"/>
+  <text x="605" y="326" font-family="Arial,sans-serif" font-size="10" fill="#ffd700">Escape attempt - Block C</text>
+  <rect x="592" y="341" width="178" height="28" rx="6" fill="#10121e"/>
+  <text x="605" y="359" font-family="Arial,sans-serif" font-size="10" fill="#00ff87">Released #P-0039</text>
+  <rect x="592" y="374" width="178" height="28" rx="6" fill="#10121e"/>
+  <text x="605" y="392" font-family="Arial,sans-serif" font-size="10" fill="#0a84ff">New intake #P-0042</text>
 
-  <!-- Release button -->
-  <rect x="588" y="405" width="182" height="24" rx="8" fill="#00ff8720" stroke="#00ff8840" stroke-width="1"/>
-  <text x="679" y="421" font-family="Arial" font-size="11" font-weight="bold" fill="#00ff87" text-anchor="middle">إطلاق سراح مبكر</text>
+  <rect x="592" y="410" width="178" height="24" rx="8" fill="#00ff8720" stroke="#00ff8840" stroke-width="1"/>
+  <text x="681" y="426" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#00ff87" text-anchor="middle">Early Release</text>
 
-  <text x="400" y="440" font-family="Arial" font-size="11" fill="#ffffff15" text-anchor="middle">RoodaScripts • نظام السجن الواقعي</text>
+  <text x="400" y="440" font-family="Arial,sans-serif" font-size="11" fill="#ffffff15" text-anchor="middle">RoodaScripts - Advanced Prison System</text>
 </svg>

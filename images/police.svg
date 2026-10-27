@@ -1,134 +1,134 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#050810"/>
-      <stop offset="100%" style="stop-color:#080d18"/>
+      <stop offset="0%" stop-color="#050810"/>
+      <stop offset="100%" stop-color="#080d18"/>
     </linearGradient>
-    <filter id="glow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <linearGradient id="blu" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0a84ff"/>
+      <stop offset="100%" stop-color="#0055cc"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-
   <rect width="800" height="450" fill="url(#bg)"/>
-  <rect x="0" y="0" width="800" height="55" fill="#0d1020"/>
-
+  <rect width="800" height="6" fill="url(#blu)"/>
   <!-- Header -->
-  <text x="30" y="37" font-family="Arial" font-size="18" font-weight="bold" fill="#0a84ff" filter="url(#glow)">🚔 نظام MDT الشرطة</text>
-  <text x="350" y="37" font-family="Arial" font-size="12" fill="#888899">Mobile Data Terminal v3.1</text>
-  <rect x="640" y="15" width="130" height="26" rx="6" fill="#ff386015" stroke="#ff386040" stroke-width="1"/>
-  <circle cx="655" cy="28" r="4" fill="#ff3860"/>
-  <text x="665" y="33" font-family="Arial" font-size="11" fill="#ff3860">⚠ تنبيه نشط: 3</text>
+  <rect x="0" y="0" width="800" height="60" fill="#06091a"/>
+  <rect width="800" height="6" fill="url(#blu)"/>
+  <text x="40" y="39" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#0a84ff" filter="url(#glow)">Police MDT System</text>
+  <text x="270" y="39" font-family="Arial,sans-serif" font-size="13" fill="#ffffff50">Mobile Data Terminal v3.1</text>
+  <rect x="620" y="16" width="150" height="28" rx="7" fill="#ff386015" stroke="#ff386050" stroke-width="1"/>
+  <circle cx="638" cy="30" r="5" fill="#ff3860" filter="url(#glow)"/>
+  <text x="650" y="35" font-family="Arial,sans-serif" font-size="11" fill="#ff3860">3 Active Alerts</text>
 
-  <!-- Left Panel - Search -->
-  <rect x="20" y="70" width="240" height="365" rx="12" fill="#0d1525" stroke="#0a84ff20" stroke-width="1"/>
-  <text x="35" y="97" font-family="Arial" font-size="13" font-weight="bold" fill="#e8e8f0">🔍 البحث</text>
+  <!-- Left panel -->
+  <rect x="20" y="72" width="240" height="365" rx="12" fill="#0a0f1f" stroke="#0a84ff20" stroke-width="1"/>
+  <text x="36" y="99" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#e0e0f0">Search</text>
+  <rect x="30" y="108" width="220" height="36" rx="8" fill="#10182a" stroke="#0a84ff30" stroke-width="1"/>
+  <text x="48" y="130" font-family="Arial,sans-serif" font-size="12" fill="#555577">Search suspect...</text>
 
-  <!-- Search box -->
-  <rect x="30" y="108" width="220" height="38" rx="8" fill="#12182a" stroke="#0a84ff30" stroke-width="1"/>
-  <text x="48" y="132" font-family="Arial" font-size="12" fill="#888899">ابحث عن مشتبه...</text>
+  <!-- Filter tabs -->
+  <rect x="30" y="152" width="66" height="26" rx="6" fill="#0a84ff"/>
+  <text x="63" y="169" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">All</text>
+  <rect x="102" y="152" width="66" height="26" rx="6" fill="#10182a"/>
+  <text x="135" y="169" font-family="Arial,sans-serif" font-size="11" fill="#888" text-anchor="middle">Wanted</text>
+  <rect x="174" y="152" width="66" height="26" rx="6" fill="#10182a"/>
+  <text x="207" y="169" font-family="Arial,sans-serif" font-size="11" fill="#888" text-anchor="middle">Logs</text>
 
-  <!-- Filter buttons -->
-  <rect x="30" y="155" width="68" height="28" rx="6" fill="#0a84ff"/>
-  <text x="45" y="173" font-family="Arial" font-size="11" font-weight="bold" fill="#fff">الكل</text>
-  <rect x="104" y="155" width="68" height="28" rx="6" fill="#12182a"/>
-  <text x="114" y="173" font-family="Arial" font-size="11" fill="#888">مطلوب</text>
-  <rect x="178" y="155" width="68" height="28" rx="6" fill="#12182a"/>
-  <text x="188" y="173" font-family="Arial" font-size="11" fill="#888">سجل</text>
+  <!-- Suspect 1 - Wanted -->
+  <rect x="30" y="190" width="220" height="54" rx="8" fill="#ff386012" stroke="#ff386040" stroke-width="1"/>
+  <circle cx="54" cy="217" r="16" fill="#ff386025"/>
+  <rect x="48" y="208" width="12" height="18" rx="2" fill="#ff386050"/>
+  <rect x="62" y="208" width="12" height="18" rx="2" fill="#ff386050"/>
+  <text x="75" y="210" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#e0e0f0">Khalid Al-Mutairi</text>
+  <text x="75" y="226" font-family="Arial,sans-serif" font-size="10" fill="#ff3860">Wanted for Arrest</text>
+  <text x="75" y="238" font-family="Arial,sans-serif" font-size="9" fill="#555577">ID: #4721</text>
 
-  <!-- Recent suspects list -->
-  <text x="35" y="205" font-family="Arial" font-size="11" fill="#888899">السجلات الأخيرة</text>
+  <!-- Suspect 2 - Clean -->
+  <rect x="30" y="250" width="220" height="54" rx="8" fill="#10182a" stroke="#0a84ff20" stroke-width="1"/>
+  <circle cx="54" cy="277" r="16" fill="#0a84ff20"/>
+  <rect x="48" y="268" width="12" height="18" rx="2" fill="#0a84ff40"/>
+  <rect x="62" y="268" width="12" height="18" rx="2" fill="#0a84ff40"/>
+  <text x="75" y="270" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#e0e0f0">Ahmed Al-Sahli</text>
+  <text x="75" y="286" font-family="Arial,sans-serif" font-size="10" fill="#00ff87">Clean Record</text>
+  <text x="75" y="298" font-family="Arial,sans-serif" font-size="9" fill="#555577">ID: #3892</text>
 
-  <!-- Person 1 - Wanted -->
-  <rect x="30" y="215" width="220" height="52" rx="8" fill="#ff386010" stroke="#ff386030" stroke-width="1"/>
-  <circle cx="52" cy="241" r="14" fill="#ff386030"/>
-  <text x="47" y="246" font-family="Arial" font-size="13">👤</text>
-  <text x="72" y="234" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">خالد المطيري</text>
-  <text x="72" y="250" font-family="Arial" font-size="10" fill="#ff3860">● مطلوب للاعتقال</text>
-  <text x="72" y="262" font-family="Arial" font-size="9" fill="#888">ID: #4721</text>
+  <!-- Suspect 3 - Warning -->
+  <rect x="30" y="310" width="220" height="54" rx="8" fill="#ffd70010" stroke="#ffd70030" stroke-width="1"/>
+  <circle cx="54" cy="337" r="16" fill="#ffd70020"/>
+  <rect x="48" y="328" width="12" height="18" rx="2" fill="#ffd70050"/>
+  <rect x="62" y="328" width="12" height="18" rx="2" fill="#ffd70050"/>
+  <text x="75" y="330" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#e0e0f0">Fahad Al-Anazi</text>
+  <text x="75" y="346" font-family="Arial,sans-serif" font-size="10" fill="#ffd700">Under Surveillance</text>
+  <text x="75" y="358" font-family="Arial,sans-serif" font-size="9" fill="#555577">ID: #5103</text>
 
-  <!-- Person 2 - Clean -->
-  <rect x="30" y="273" width="220" height="52" rx="8" fill="#12182a" stroke="#0a84ff20" stroke-width="1"/>
-  <circle cx="52" cy="299" r="14" fill="#0a84ff20"/>
-  <text x="47" y="304" font-family="Arial" font-size="13">👤</text>
-  <text x="72" y="292" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">أحمد السهلي</text>
-  <text x="72" y="308" font-family="Arial" font-size="10" fill="#00ff87">● سجل نظيف</text>
-  <text x="72" y="320" font-family="Arial" font-size="9" fill="#888">ID: #3892</text>
-
-  <!-- Person 3 - Warning -->
-  <rect x="30" y="331" width="220" height="52" rx="8" fill="#ffd70010" stroke="#ffd70030" stroke-width="1"/>
-  <circle cx="52" cy="357" r="14" fill="#ffd70020"/>
-  <text x="47" y="362" font-family="Arial" font-size="13">👤</text>
-  <text x="72" y="350" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">فهد العنزي</text>
-  <text x="72" y="366" font-family="Arial" font-size="10" fill="#ffd700">● تحت المراقبة</text>
-  <text x="72" y="378" font-family="Arial" font-size="9" fill="#888">ID: #5103</text>
-
-  <!-- Center/Main Panel - Profile -->
-  <rect x="275" y="70" width="310" height="365" rx="12" fill="#0d1525" stroke="#0a84ff20" stroke-width="1"/>
-
-  <!-- Profile header -->
-  <rect x="275" y="70" width="310" height="80" rx="12" fill="#ff386015" stroke="#ff386030" stroke-width="1"/>
-  <rect x="275" y="120" width="310" height="30" fill="#ff386015"/>
-
-  <circle cx="318" cy="110" r="28" fill="#ff386025" stroke="#ff3860" stroke-width="2"/>
-  <text x="307" y="118" font-family="Arial" font-size="24">👤</text>
-
-  <text x="358" y="97" font-family="Arial" font-size="16" font-weight="bold" fill="#ffffff">خالد المطيري</text>
-  <rect x="358" y="103" width="80" height="18" rx="5" fill="#ff3860"/>
-  <text x="368" y="116" font-family="Arial" font-size="11" font-weight="bold" fill="#fff">⚠ مطلوب</text>
-  <text x="358" y="137" font-family="Arial" font-size="10" fill="#888899">ID: #4721 • عمر: 28</text>
+  <!-- Center panel - Profile -->
+  <rect x="272" y="72" width="318" height="365" rx="12" fill="#0a0f1f" stroke="#0a84ff20" stroke-width="1"/>
+  <rect x="272" y="72" width="318" height="82" rx="12" fill="#ff386015" stroke="#ff386030" stroke-width="1"/>
+  <rect x="272" y="132" width="318" height="22" fill="#ff386015"/>
+  <circle cx="318" cy="113" r="30" fill="#ff386025" stroke="#ff3860" stroke-width="2"/>
+  <rect x="308" y="100" width="20" height="26" rx="2" fill="#ff386060"/>
+  <text x="365" y="100" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#fff">Khalid Al-Mutairi</text>
+  <rect x="365" y="106" width="82" height="19" rx="5" fill="#ff3860"/>
+  <text x="406" y="119" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">WANTED</text>
+  <text x="365" y="142" font-family="Arial,sans-serif" font-size="10" fill="#aaa">ID: #4721  |  Age: 28</text>
 
   <!-- Info grid -->
-  <rect x="290" y="165" width="135" height="45" rx="8" fill="#12182a"/>
-  <text x="300" y="183" font-family="Arial" font-size="10" fill="#888899">رقم الهوية</text>
-  <text x="300" y="200" font-family="Arial" font-size="13" font-weight="bold" fill="#e8e8f0">1027834XXX</text>
-
-  <rect x="435" y="165" width="135" height="45" rx="8" fill="#12182a"/>
-  <text x="445" y="183" font-family="Arial" font-size="10" fill="#888899">رقم اللوحة</text>
-  <text x="445" y="200" font-family="Arial" font-size="13" font-weight="bold" fill="#0a84ff">ABC-2847</text>
+  <rect x="288" y="168" width="132" height="44" rx="8" fill="#10182a"/>
+  <text x="300" y="186" font-family="Arial,sans-serif" font-size="10" fill="#888">National ID</text>
+  <text x="300" y="204" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#e0e0f0">1027834XXX</text>
+  <rect x="430" y="168" width="132" height="44" rx="8" fill="#10182a"/>
+  <text x="442" y="186" font-family="Arial,sans-serif" font-size="10" fill="#888">Plate Number</text>
+  <text x="442" y="204" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#0a84ff">ABC-2847</text>
 
   <!-- Crimes -->
-  <text x="292" y="232" font-family="Arial" font-size="12" font-weight="bold" fill="#888899">الجرائم المسجلة</text>
-
-  <rect x="290" y="240" width="275" height="30" rx="6" fill="#ff386015" stroke="#ff386025" stroke-width="1"/>
-  <text x="300" y="259" font-family="Arial" font-size="11" fill="#ff3860">🔴 سرقة مسلحة - 15/03/2024</text>
-
-  <rect x="290" y="276" width="275" height="30" rx="6" fill="#ffd70015" stroke="#ffd70025" stroke-width="1"/>
-  <text x="300" y="295" font-family="Arial" font-size="11" fill="#ffd700">🟡 تعدي على ممتلكات - 08/02/2024</text>
-
-  <rect x="290" y="312" width="275" height="30" rx="6" fill="#ff386015" stroke="#ff386025" stroke-width="1"/>
-  <text x="300" y="331" font-family="Arial" font-size="11" fill="#ff3860">🔴 مقاومة الاعتقال - 22/01/2024</text>
+  <text x="292" y="234" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#888">Criminal Record</text>
+  <rect x="288" y="242" width="284" height="30" rx="6" fill="#ff386015" stroke="#ff386025" stroke-width="1"/>
+  <circle cx="302" cy="257" r="5" fill="#ff3860"/>
+  <text x="314" y="261" font-family="Arial,sans-serif" font-size="11" fill="#e0e0f0">Armed Robbery - 15/03/2024</text>
+  <rect x="288" y="278" width="284" height="30" rx="6" fill="#ffd70015" stroke="#ffd70025" stroke-width="1"/>
+  <circle cx="302" cy="293" r="5" fill="#ffd700"/>
+  <text x="314" y="297" font-family="Arial,sans-serif" font-size="11" fill="#e0e0f0">Property Damage - 08/02/2024</text>
+  <rect x="288" y="314" width="284" height="30" rx="6" fill="#ff386015" stroke="#ff386025" stroke-width="1"/>
+  <circle cx="302" cy="329" r="5" fill="#ff3860"/>
+  <text x="314" y="333" font-family="Arial,sans-serif" font-size="11" fill="#e0e0f0">Resisting Arrest - 22/01/2024</text>
 
   <!-- Action buttons -->
-  <rect x="290" y="358" width="130" height="35" rx="8" fill="#ff3860"/>
-  <text x="330" y="380" font-family="Arial" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">اعتقال فوري</text>
+  <rect x="288" y="358" width="128" height="36" rx="8" fill="#ff3860"/>
+  <text x="352" y="381" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Arrest Now</text>
+  <rect x="426" y="358" width="128" height="36" rx="8" fill="#0a84ff20" stroke="#0a84ff50" stroke-width="1"/>
+  <text x="490" y="381" font-family="Arial,sans-serif" font-size="12" fill="#0a84ff" text-anchor="middle">Add Report</text>
 
-  <rect x="430" y="358" width="130" height="35" rx="8" fill="#0a84ff20" stroke="#0a84ff50" stroke-width="1"/>
-  <text x="495" y="380" font-family="Arial" font-size="12" fill="#0a84ff" text-anchor="middle">إضافة تقرير</text>
+  <!-- Right panel - Dispatch map -->
+  <rect x="602" y="72" width="178" height="365" rx="12" fill="#0a0f1f" stroke="#0a84ff20" stroke-width="1"/>
+  <text x="618" y="99" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#e0e0f0">Dispatch</text>
+  <rect x="612" y="108" width="158" height="130" rx="8" fill="#060c16"/>
+  <!-- Map grid -->
+  <line x1="612" y1="173" x2="770" y2="173" stroke="#ffffff08" stroke-width="1"/>
+  <line x1="691" y1="108" x2="691" y2="238" stroke="#ffffff08" stroke-width="1"/>
+  <!-- Blips on map -->
+  <circle cx="648" cy="148" r="7" fill="#ff3860" filter="url(#glow)"/>
+  <circle cx="720" cy="180" r="7" fill="#0a84ff" filter="url(#glow)"/>
+  <circle cx="635" cy="200" r="6" fill="#ffd700"/>
+  <circle cx="750" cy="130" r="5" fill="#00ff87"/>
+  <!-- Unit labels -->
+  <text x="648" y="145" font-family="Arial,sans-serif" font-size="7" fill="#fff" text-anchor="middle">U1</text>
+  <text x="720" y="177" font-family="Arial,sans-serif" font-size="7" fill="#fff" text-anchor="middle">U4</text>
 
-  <!-- Right Panel - Map/Dispatch -->
-  <rect x="600" y="70" width="180" height="365" rx="12" fill="#0d1525" stroke="#0a84ff20" stroke-width="1"/>
-  <text x="615" y="97" font-family="Arial" font-size="12" font-weight="bold" fill="#e8e8f0">📡 الإرسال</text>
+  <!-- Active units list -->
+  <text x="618" y="256" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#888">Active Units</text>
+  <rect x="612" y="263" width="158" height="30" rx="6" fill="#0a84ff15" stroke="#0a84ff30" stroke-width="1"/>
+  <circle cx="626" cy="278" r="5" fill="#0a84ff"/>
+  <text x="638" y="282" font-family="Arial,sans-serif" font-size="11" fill="#e0e0f0">Unit-01 - Active</text>
+  <rect x="612" y="299" width="158" height="30" rx="6" fill="#0a84ff15" stroke="#0a84ff30" stroke-width="1"/>
+  <circle cx="626" cy="314" r="5" fill="#00ff87"/>
+  <text x="638" y="318" font-family="Arial,sans-serif" font-size="11" fill="#e0e0f0">Unit-04 - Patrol</text>
+  <rect x="612" y="335" width="158" height="30" rx="6" fill="#ff386015" stroke="#ff386030" stroke-width="1"/>
+  <circle cx="626" cy="350" r="5" fill="#ff3860"/>
+  <text x="638" y="354" font-family="Arial,sans-serif" font-size="11" fill="#ff3860">Unit-07 - Response</text>
 
-  <!-- Mini dispatch map -->
-  <rect x="610" y="105" width="160" height="130" rx="8" fill="#08101a"/>
-  <line x1="610" y1="170" x2="770" y2="170" stroke="#ffffff08" stroke-width="1"/>
-  <line x1="690" y1="105" x2="690" y2="235" stroke="#ffffff08" stroke-width="1"/>
-  <circle cx="650" cy="148" r="6" fill="#ff3860" filter="url(#glow)"/>
-  <circle cx="720" cy="180" r="6" fill="#0a84ff" filter="url(#glow)"/>
-  <circle cx="635" cy="200" r="5" fill="#ffd700"/>
-  <text x="690" y="248" font-family="Arial" font-size="10" fill="#888899" text-anchor="middle">خريطة الإرسال</text>
-
-  <!-- Active units -->
-  <text x="615" y="270" font-family="Arial" font-size="11" font-weight="bold" fill="#888899">الوحدات النشطة</text>
-  <rect x="610" y="278" width="160" height="30" rx="6" fill="#0a84ff15" stroke="#0a84ff30" stroke-width="1"/>
-  <circle cx="624" cy="293" r="4" fill="#0a84ff"/>
-  <text x="634" y="297" font-family="Arial" font-size="11" fill="#e8e8f0">وحدة-01 • نشطة</text>
-  <rect x="610" y="314" width="160" height="30" rx="6" fill="#0a84ff15" stroke="#0a84ff30" stroke-width="1"/>
-  <circle cx="624" cy="329" r="4" fill="#00ff87"/>
-  <text x="634" y="333" font-family="Arial" font-size="11" fill="#e8e8f0">وحدة-04 • دورية</text>
-  <rect x="610" y="350" width="160" height="30" rx="6" fill="#ff386015" stroke="#ff386030" stroke-width="1"/>
-  <circle cx="624" cy="365" r="4" fill="#ff3860"/>
-  <text x="634" y="369" font-family="Arial" font-size="11" fill="#ff3860">وحدة-07 • استجابة</text>
-
-  <text x="400" y="440" font-family="Arial" font-size="11" fill="#ffffff15" text-anchor="middle">RoodaScripts • نظام MDT الشرطة</text>
+  <text x="400" y="440" font-family="Arial,sans-serif" font-size="11" fill="#ffffff15" text-anchor="middle">RoodaScripts - Police MDT System</text>
 </svg>
